@@ -149,23 +149,36 @@
     #hero {
       margin-top: 70px;
       min-height: calc(100vh - 70px);
-      background: var(--darker);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 80px 60px 60px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 80px 60px 60px;
     }
 
+    /* full-bleed bg image */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    /* dark gradient overlay — strong left so text stays sharp */
     #hero::before {
       content: '';
       position: absolute;
-      top: 0; right: 0;
-      width: 55%;
-      height: 100%;
-      background: linear-gradient(135deg, #2a2000 0%, #1a1200 100%);
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+      inset: 0;
+      background: linear-gradient(
+        100deg,
+        rgba(10,10,10,.88) 0%,
+        rgba(10,10,10,.70) 50%,
+        rgba(10,10,10,.35) 100%
+      );
+      z-index: 1;
     }
 
     .hero-bg-text {
@@ -175,17 +188,18 @@
       font-family: var(--font-head);
       font-size: 200px;
       font-weight: 800;
-      color: rgba(255,255,255,.025);
+      color: rgba(255,255,255,.04);
       letter-spacing: -5px;
       line-height: 1;
       user-select: none;
       pointer-events: none;
+      z-index: 2;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
-      max-width: 580px;
+      z-index: 3;
+      max-width: 620px;
     }
 
     .hero-badge {
@@ -230,9 +244,9 @@
 
     .hero-sub {
       font-size: 16px;
-      color: rgba(255,255,255,.6);
+      color: rgba(255,255,255,.7);
       line-height: 1.7;
-      max-width: 440px;
+      max-width: 480px;
       margin-bottom: 36px;
       animation: fadeInUp .7s .2s ease both;
     }
@@ -270,7 +284,7 @@
       font-size: 14px;
       letter-spacing: .5px;
       padding: 13px 30px;
-      border: 2px solid rgba(255,255,255,.3);
+      border: 2px solid rgba(255,255,255,.4);
       border-radius: 4px;
       cursor: pointer;
       text-decoration: none;
@@ -301,7 +315,7 @@
 
     .stat-label {
       font-size: 12px;
-      color: rgba(255,255,255,.5);
+      color: rgba(255,255,255,.55);
       letter-spacing: 1px;
       text-transform: uppercase;
       margin-top: 4px;
@@ -309,71 +323,9 @@
 
     .stat-divider {
       width: 1px;
-      background: rgba(255,255,255,.1);
+      background: rgba(255,255,255,.15);
       align-self: stretch;
     }
-
-    .hero-image {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      padding-bottom: 0;
-    }
-
-    .hero-img-placeholder {
-      width: 420px;
-      height: 520px;
-      background: linear-gradient(160deg, rgba(245,166,35,.2), rgba(245,166,35,.05));
-      border: 2px solid rgba(245,166,35,.2);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-img-placeholder::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--gold);
-    }
-
-    .worker-icon {
-      font-size: 100px;
-      line-height: 1;
-    }
-
-    .hero-img-placeholder p {
-      color: rgba(255,255,255,.4);
-      font-size: 13px;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .badge-floating {
-      position: absolute;
-      background: var(--gold);
-      color: var(--darker);
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 13px;
-      padding: 10px 16px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .badge-floating.left { bottom: 40px; left: -30px; }
-    .badge-floating.right { top: 40px; right: -20px; flex-direction: column; align-items: center; padding: 14px; }
-    .badge-floating.right .big { font-size: 28px; line-height: 1; }
 
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -458,6 +410,7 @@
       justify-content: center;
       font-size: 50px;
       box-shadow: 0 20px 40px rgba(0,0,0,.2);
+      overflow: hidden;
     }
 
     .exp-badge {
@@ -1084,14 +1037,11 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      nav, section, #hero, #cta-band, .footer-main, .footer-bottom {
+      nav, section, #cta-band, .footer-main, .footer-bottom {
         padding-left: 32px;
         padding-right: 32px;
       }
-
-      #hero { grid-template-columns: 1fr; min-height: auto; padding-top: 60px; padding-bottom: 60px; }
-      #hero::before { display: none; }
-      .hero-image { display: none; }
+      #hero { padding: 60px 32px; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       #about { grid-template-columns: 1fr; }
       .about-images { display: none; }
@@ -1151,6 +1101,9 @@
 
 <!-- ── HERO ── -->
 <section id="hero">
+  <!-- swap filename here only -->
+  <img src="images/hero-bg.jpeg" alt="G-Tech Engineering drilling rig on site" class="hero-bg-img">
+
   <div class="hero-content">
     <div class="hero-badge">Harare's Trusted Engineers</div>
     <h1 class="hero-title">We Build <span>Strong</span><br>And Drill <span>Deep.</span></h1>
@@ -1173,17 +1126,6 @@
       <div class="stat">
         <div class="stat-num">100%</div>
         <div class="stat-label">Client Satisfaction</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-image">
-    <div class="hero-img-placeholder">
-      <img src="images/hero-bg.jpeg" alt="G-Tech Engineering team on site" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:8px;">
-      <div class="badge-floating left">✅ Licensed &amp; Insured</div>
-      <div class="badge-floating right">
-        <span class="big">⭐</span>
-        <span>5-Star</span>
-        <span style="font-size:10px;opacity:.8">Rated</span>
       </div>
     </div>
   </div>
@@ -1502,14 +1444,12 @@
     document.getElementById('mobileMenu').classList.toggle('open');
   }
 
-  // Close mobile menu on resize
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
       document.getElementById('mobileMenu').classList.remove('open');
     }
   });
 
-  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
@@ -1518,7 +1458,6 @@
     });
   });
 
-  // Intersection observer for fade-in on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
