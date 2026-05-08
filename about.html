@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | G-Tech Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #F5A623;
+      --gold-dark: #D4891A;
+      --blue: #0891B2;
+      --blue-dark: #0670A0;
+      --blue-soft: rgba(8,145,178,.12);
+      --dark: #1A1A1A;
+      --darker: #111111;
+      --white: #FFFFFF;
+      --off-white: #F7F7F7;
+      --gray: #666;
+      --light-gray: #E8E8E8;
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--dark); background: var(--white); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--darker); height: 70px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; box-shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon {
+      width: 38px; height: 38px; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-weight: 800; font-size: 18px;
+      color: var(--darker); clip-path: polygon(10% 0%,90% 0%,100% 10%,100% 90%,90% 100%,10% 100%,0% 90%,0% 10%);
+    }
+    .logo-text { font-family: var(--font-head); font-weight: 800; font-size: 20px; color: var(--white); letter-spacing: 1px; line-height: 1.1; }
+    .logo-text span { color: var(--gold); }
+    .logo-sub { display: block; font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 2px; color: rgba(255,255,255,.5); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,.8); font-size: 14px; font-weight: 500; letter-spacing: .5px; transition: color .2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width .25s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { background: var(--gold) !important; color: var(--darker) !important; font-weight: 700 !important; padding: 10px 24px; border-radius: 4px; }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--gold-dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); transition: all .3s; }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0; background: var(--darker); z-index: 999; padding: 40px 30px; flex-direction: column; gap: 8px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 14px 0; font-size: 22px; font-family: var(--font-head); font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,.7); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.06); transition: color .2s; }
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      margin-top: 70px; background: var(--darker);
+      padding: 80px 60px 70px; position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40%;
+      background: linear-gradient(135deg, rgba(8,145,178,.08), rgba(245,166,35,.05));
+      clip-path: polygon(20% 0,100% 0,100% 100%,0% 100%);
+    }
+    .page-hero-bg {
+      position: absolute; right: -20px; bottom: -30px;
+      font-family: var(--font-head); font-size: 180px; font-weight: 800;
+      color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; user-select: none;
+    }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,.4); font-size: 13px; text-decoration: none; transition: color .2s; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span { color: rgba(255,255,255,.2); font-size: 13px; }
+    .breadcrumb .current { color: var(--blue); font-size: 13px; font-weight: 600; }
+    .page-hero h1 { font-family: var(--font-head); font-size: clamp(44px,7vw,80px); font-weight: 800; color: var(--white); text-transform: uppercase; line-height: 1; position: relative; z-index: 1; }
+    .page-hero h1 span { color: var(--gold); }
+    .page-hero p { color: rgba(255,255,255,.55); font-size: 16px; line-height: 1.7; max-width: 500px; margin-top: 16px; position: relative; z-index: 1; }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 80px 60px; }
+    .section-label { display: inline-flex; align-items: center; gap: 10px; color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-label::before { content: ''; width: 28px; height: 2px; background: var(--blue); }
+    .section-title { font-family: var(--font-head); font-size: clamp(34px,4vw,52px); font-weight: 800; line-height: 1.1; text-transform: uppercase; margin-bottom: 16px; }
+    .section-desc { font-size: 15px; color: var(--gray); line-height: 1.75; max-width: 580px; }
+
+    /* ── STORY ── */
+    #story { background: var(--off-white); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .story-images { position: relative; height: 480px; }
+    .img-block { border-radius: 8px; display: flex; align-items: center; justify-content: center; position: absolute; overflow: hidden; }
+    .img-block.main { width: 68%; height: 400px; top: 0; left: 0; background: linear-gradient(135deg,#1a2a3a,#0d1a26); border: 3px solid var(--blue); font-size: 70px; }
+    .img-block.secondary { width: 52%; height: 230px; bottom: 0; right: 0; background: var(--gold); font-size: 50px; box-shadow: 0 20px 50px rgba(0,0,0,.2); }
+    .years-badge {
+      position: absolute; top: 50%; left: 56%; transform: translate(-50%,-50%);
+      background: var(--darker); border: 4px solid var(--gold); border-radius: 50%;
+      width: 96px; height: 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 5; text-align: center;
+    }
+    .years-badge .n { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--gold); line-height: 1; }
+    .years-badge .l { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .story-text .section-desc { margin-bottom: 28px; }
+    .story-para { font-size: 14px; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+    .story-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .btn-gold { background: var(--gold); color: var(--darker); font-weight: 700; font-size: 14px; padding: 13px 30px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); }
+    .btn-blue { background: var(--blue); color: var(--white); font-weight: 700; font-size: 14px; padding: 13px 30px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+    /* ── STATS ── */
+    #stats { background: var(--darker); padding: 60px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; }
+    .stat-card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.06); padding: 40px 30px; text-align: center; transition: background .3s; }
+    .stat-card:hover { background: rgba(8,145,178,.08); }
+    .stat-num { font-family: var(--font-head); font-size: 56px; font-weight: 800; line-height: 1; }
+    .stat-num.gold { color: var(--gold); }
+    .stat-num.blue { color: var(--blue); }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,.5); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 8px; }
+    .stat-icon { font-size: 28px; margin-bottom: 16px; }
+
+    /* ── MISSION VISION ── */
+    #mission { background: var(--white); }
+    .mv-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 48px; }
+    .mv-card { padding: 36px 28px; border-radius: 8px; border: 2px solid var(--light-gray); position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
+    .mv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+    .mv-card.gold-top::before { background: var(--gold); }
+    .mv-card.blue-top::before { background: var(--blue); }
+    .mv-card.dark-top::before { background: var(--dark); }
+    .mv-card:hover { border-color: transparent; transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.1); }
+    .mv-icon { width: 52px; height: 52px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+    .mv-icon.gold-bg { background: rgba(245,166,35,.12); }
+    .mv-icon.blue-bg { background: var(--blue-soft); }
+    .mv-icon.dark-bg { background: rgba(26,26,26,.08); }
+    .mv-card h3 { font-family: var(--font-head); font-size: 24px; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; }
+    .mv-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+
+    /* ── VALUES ── */
+    #values { background: var(--off-white); }
+    .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 48px; }
+    .value-item { display: flex; gap: 20px; align-items: flex-start; background: var(--white); padding: 28px; border-radius: 8px; border-left: 4px solid transparent; transition: border-color .3s, box-shadow .3s; }
+    .value-item:nth-child(odd) { border-color: var(--gold); }
+    .value-item:nth-child(even) { border-color: var(--blue); }
+    .value-item:hover { box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .value-icon { font-size: 32px; flex-shrink: 0; margin-top: 2px; }
+    .value-item h4 { font-family: var(--font-head); font-size: 20px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+    .value-item p { font-size: 14px; color: var(--gray); line-height: 1.65; }
+
+    /* ── TEAM ── */
+    #team { background: var(--white); }
+    .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 48px; }
+    .team-card { border-radius: 8px; overflow: hidden; border: 2px solid var(--light-gray); transition: transform .3s, box-shadow .3s, border-color .3s; }
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.1); border-color: var(--blue); }
+    .team-photo { height: 240px; background: linear-gradient(135deg,#1a2a3a,#0d1a26); display: flex; align-items: center; justify-content: center; font-size: 70px; position: relative; }
+    .team-photo .role-badge { position: absolute; bottom: 14px; left: 14px; background: var(--gold); color: var(--darker); font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 2px; }
+    .team-info { padding: 22px; }
+    .team-info h3 { font-family: var(--font-head); font-size: 22px; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+    .team-info .role { font-size: 13px; color: var(--blue); font-weight: 600; margin-bottom: 12px; }
+    .team-info p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+    /* ── CTA BAND ── */
+    #cta-band { background: var(--gold); padding: 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-text h2 { font-family: var(--font-head); font-size: clamp(28px,4vw,44px); font-weight: 800; text-transform: uppercase; color: var(--darker); line-height: 1.1; }
+    .cta-text p { font-size: 15px; color: rgba(26,26,26,.7); margin-top: 8px; }
+    .btn-dark { background: var(--darker); color: var(--white); font-weight: 700; font-size: 14px; padding: 15px 36px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; flex-shrink: 0; transition: transform .2s, box-shadow .2s; }
+    .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--darker); color: rgba(255,255,255,.6); }
+    .footer-main { padding: 70px 60px 50px; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.4fr; gap: 50px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin: 16px 0 24px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-btn { width: 36px; height: 36px; border-radius: 4px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); text-decoration: none; font-size: 15px; transition: background .2s, color .2s, border-color .2s; }
+    .social-btn:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .footer-col h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; position: relative; padding-bottom: 12px; }
+    .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 28px; height: 2px; background: var(--blue); }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,.5); font-size: 14px; display: flex; align-items: center; gap: 8px; transition: color .2s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-links a::before { content: '›'; color: var(--blue); font-size: 16px; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; font-size: 14px; }
+    .contact-icon { width: 32px; height: 32px; background: rgba(8,145,178,.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .contact-item a { color: rgba(255,255,255,.5); text-decoration: none; line-height: 1.5; }
+    .contact-item a:hover { color: var(--blue); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .footer-bottom a:hover { color: var(--blue); }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav, .page-hero, section, #cta-band, .footer-main, .footer-bottom { padding-left: 32px; padding-right: 32px; }
+      .story-grid { grid-template-columns: 1fr; gap: 40px; }
+      .story-images { display: none; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .mv-grid { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      nav { padding: 0 20px; }
+      .page-hero { padding: 60px 20px 50px; }
+      section { padding: 60px 20px; }
+      #cta-band { flex-direction: column; text-align: center; padding: 50px 20px; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .mv-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 36px; padding: 50px 20px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">GT</div>
+    <div class="logo-text">G-TECH <span>ENG.</span><span class="logo-sub">Borehole & Construction</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get A Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About Us</a>
+  <a href="services.html" onclick="toggleMenu()">Services</a>
+  <a href="projects.html" onclick="toggleMenu()">Projects</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--gold)">Get A Quote →</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>/</span>
+    <span class="current">About Us</span>
+  </div>
+  <h1>About <span>G-Tech</span><br>Engineering.</h1>
+  <p>Built on integrity, driven by expertise — learn the story behind Harare's trusted borehole drilling and construction company.</p>
+  <div class="page-hero-bg">ABOUT</div>
+</div>
+
+<!-- STORY -->
+<section id="story">
+  <div class="story-grid">
+    <div class="story-images">
+      <div class="img-block main"><img src="images/story-main.jpg" alt="G-Tech Engineering at work" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="img-block secondary"><img src="images/story-secondary.jpg" alt="G-Tech borehole water" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="years-badge">
+        <span class="n">10+</span>
+        <span class="l">Years<br>Exp.</span>
+      </div>
+    </div>
+    <div class="story-text">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">Built On<br>Experience &amp; Trust.</h2>
+      <p class="story-para">G-Tech Engineering was founded with a clear mission: to deliver reliable borehole drilling and quality construction services to the people of Harare and beyond. What started as a small team of dedicated engineers has grown into one of Zimbabwe's most trusted names in groundwater solutions and building construction.</p>
+      <p class="story-para">Operating from our base at 8 Williams Way, New Adbennie, Harare, we have completed over 200 projects across residential, commercial and agricultural sectors — always putting our clients first and delivering results that last.</p>
+      <p class="story-para">Our team combines deep local knowledge of Zimbabwe's geology with modern drilling technology, giving us the ability to reach reliable water sources where others cannot. We take pride in every project — from a single household borehole to a full commercial construction build.</p>
+      <div class="story-btns">
+        <a href="contact.html" class="btn-gold">Get A Free Quote ›</a>
+        <a href="services.html" class="btn-blue">Our Services ›</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-icon">🏗️</div>
+      <div class="stat-num gold">200+</div>
+      <div class="stat-label">Projects Completed</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">💧</div>
+      <div class="stat-num blue">150+</div>
+      <div class="stat-label">Boreholes Drilled</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-num gold">100%</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-icon">📅</div>
+      <div class="stat-num blue">10+</div>
+      <div class="stat-label">Years In Business</div>
+    </div>
+  </div>
+</div>
+
+<!-- MISSION VISION VALUES -->
+<section id="mission">
+  <div class="section-label">What Drives Us</div>
+  <h2 class="section-title">Mission, Vision<br>&amp; Purpose.</h2>
+  <div class="mv-grid">
+    <div class="mv-card gold-top reveal">
+      <div class="mv-icon gold-bg">🎯</div>
+      <h3>Our Mission</h3>
+      <p>To provide professional, affordable, and high-quality borehole drilling and construction services that improve the lives of individuals, families, and businesses across Zimbabwe — with integrity at the core of everything we do.</p>
+    </div>
+    <div class="mv-card blue-top reveal">
+      <div class="mv-icon blue-bg">🔭</div>
+      <h3>Our Vision</h3>
+      <p>To be Zimbabwe's leading and most trusted engineering company — expanding access to clean water and building structures that stand for generations, one project at a time.</p>
+    </div>
+    <div class="mv-card dark-top reveal">
+      <div class="mv-icon dark-bg">🤝</div>
+      <h3>Our Promise</h3>
+      <p>Every client receives transparent pricing, a dedicated team, and a finished project that exceeds expectations. We stand behind our work — long after the tools are packed away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section id="values">
+  <div class="section-label">Core Values</div>
+  <h2 class="section-title">What We<br>Stand For.</h2>
+  <div class="values-grid">
+    <div class="value-item reveal">
+      <div class="value-icon">🔒</div>
+      <div>
+        <h4>Integrity</h4>
+        <p>We are honest and transparent in all our dealings — from our quotes to our timelines. What we say is what we deliver, no hidden costs or surprises.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon">⚡</div>
+      <div>
+        <h4>Excellence</h4>
+        <p>We don't cut corners. Every borehole drilled, every wall built, and every pump installed meets the highest engineering standards available in Zimbabwe.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon">🌍</div>
+      <div>
+        <h4>Community Impact</h4>
+        <p>Access to clean water is a right, not a privilege. We actively work to make borehole drilling accessible and affordable to communities across Zimbabwe.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon">🛠️</div>
+      <div>
+        <h4>Reliability</h4>
+        <p>We show up on time, every time. Our clients trust us to complete their projects on schedule — and we take that responsibility seriously.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon">🔬</div>
+      <div>
+        <h4>Innovation</h4>
+        <p>We invest in modern drilling technology and construction methods to deliver better results faster — keeping G-Tech Engineering ahead of the curve.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon">🤝</div>
+      <div>
+        <h4>Client First</h4>
+        <p>Every decision we make puts the client's needs first. Our after-sales support, clear communication, and follow-through set us apart in the industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-label">Our People</div>
+  <h2 class="section-title">Meet The<br>Team Behind G-Tech.</h2>
+  <p class="section-desc">Our strength lies in our people — experienced engineers, skilled drillers, and dedicated support staff committed to delivering world-class results on every project.</p>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-photo">
+        <img src="images/team-director.jpg" alt="Founder & Director" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <div class="role-badge">Founder & Director</div>
+      </div>
+      <div class="team-info">
+        <h3>Director</h3>
+        <div class="role">Founder & Managing Director</div>
+        <p>With over 10 years leading G-Tech Engineering, our director brings deep expertise in borehole site assessment, project management and client relations across Zimbabwe.</p>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-photo" style="background:linear-gradient(135deg,#1a2a1a,#0d1a0d);">
+        <img src="images/team-engineer.jpg" alt="Lead Engineer" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <div class="role-badge">Lead Engineer</div>
+      </div>
+      <div class="team-info">
+        <h3>Lead Engineer</h3>
+        <div class="role">Senior Drilling Technician</div>
+        <p>Our lead engineer oversees all borehole drilling operations, equipment maintenance and site safety — ensuring every project meets technical specifications.</p>
+      </div>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-photo" style="background:linear-gradient(135deg,#1a1a2a,#0d0d1a);">
+        <img src="images/team-site-manager.jpg" alt="Site Manager" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        <div class="role-badge">Site Manager</div>
+      </div>
+      <div class="team-info">
+        <h3>Site Manager</h3>
+        <div class="role">Construction & Project Lead</div>
+        <p>Responsible for all construction project execution — from foundation laying to final finishes, our site manager ensures quality workmanship on every build.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div id="cta-band">
+  <div class="cta-text">
+    <h2>Ready To Work With Us?</h2>
+    <p>Get in touch today — free consultations and competitive quotes available.</p>
+  </div>
+  <a href="contact.html" class="btn-dark">Contact G-Tech Today ›</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><div class="logo-icon">GT</div><div class="logo-text">G-TECH <span>ENG.</span><span class="logo-sub">Borehole & Construction</span></div></a>
+      <p>G-Tech Engineering is Harare's trusted partner for borehole drilling, pump installation, and construction. We build strong, drill deep, and deliver results.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100063761717785" target="_blank" class="social-btn">f</a>
+        <a href="https://wa.me/263775710780" target="_blank" class="social-btn">W</a>
+        <a href="mailto:gwenziwitness@gmail.com" class="social-btn">@</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Borehole Drilling</a></li>
+        <li><a href="services.html">Pump Installation</a></li>
+        <li><a href="services.html">Residential Builds</a></li>
+        <li><a href="services.html">Commercial Builds</a></li>
+        <li><a href="services.html">Structural Repair</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item"><div class="contact-icon">📍</div><a href="#">8 Williams Way, New Adbennie, Harare</a></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><a href="tel:+263775710780">+263 775 710 780</a><br><a href="tel:+263714338997">+263 714 338 997</a></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><a href="mailto:gwenziwitness@gmail.com">gwenziwitness@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 G-Tech Engineering. All Rights Reserved.</p>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="contact.html">Get A Quote</a></div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('resize', () => { if (window.innerWidth > 768) document.getElementById('mobileMenu').classList.remove('open'); });
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

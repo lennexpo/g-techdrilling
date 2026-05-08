@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G-Tech Engineering | Borehole Drilling & Construction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #F5A623;
+      --gold-dark: #D4891A;
+      --blue: #0891B2;
+      --blue-dark: #0670A0;
+      --blue-soft: rgba(8,145,178,.12);
+      --dark: #1A1A1A;
+      --darker: #111111;
+      --white: #FFFFFF;
+      --off-white: #F7F7F7;
+      --gray: #555555;
+      --light-gray: #E8E8E8;
+      --font-head: 'Barlow Condensed', sans-serif;
+      --font-body: 'Barlow', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--darker);
+      padding: 0 60px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(0,0,0,.4);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 38px; height: 38px;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--darker);
+      clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+    }
+
+    .logo-text {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--white);
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+
+    .logo-text span { color: var(--gold); }
+
+    .logo-sub {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,.5);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.8);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      transition: color .2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width .25s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--darker) !important;
+      font-weight: 700 !important;
+      padding: 10px 24px;
+      border-radius: 4px;
+      transition: background .2s, transform .15s !important;
+    }
+
+    .nav-cta:hover { background: var(--gold-dark) !important; transform: translateY(-1px); }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: var(--white);
+      transition: all .3s;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      margin-top: 70px;
+      min-height: calc(100vh - 70px);
+      background: var(--darker);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 80px 60px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(135deg, #2a2000 0%, #1a1200 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      bottom: -20px;
+      left: -10px;
+      font-family: var(--font-head);
+      font-size: 200px;
+      font-weight: 800;
+      color: rgba(255,255,255,.025);
+      letter-spacing: -5px;
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 580px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(8,145,178,.15);
+      border: 1px solid rgba(8,145,178,.35);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+      margin-bottom: 24px;
+      animation: fadeInUp .6s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--blue);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      animation: fadeInUp .7s .1s ease both;
+    }
+
+    .hero-title span { color: var(--gold); }
+
+    .hero-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,.6);
+      line-height: 1.7;
+      max-width: 440px;
+      margin-bottom: 36px;
+      animation: fadeInUp .7s .2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeInUp .7s .3s ease both;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--darker);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .5px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background .2s, transform .15s;
+    }
+
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: .5px;
+      padding: 13px 30px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color .2s, color .2s, transform .15s;
+    }
+
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 52px;
+      animation: fadeInUp .7s .4s ease both;
+    }
+
+    .stat { text-align: left; }
+
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: rgba(255,255,255,.1);
+      align-self: stretch;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 0;
+    }
+
+    .hero-img-placeholder {
+      width: 420px;
+      height: 520px;
+      background: linear-gradient(160deg, rgba(245,166,35,.2), rgba(245,166,35,.05));
+      border: 2px solid rgba(245,166,35,.2);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .worker-icon {
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    .hero-img-placeholder p {
+      color: rgba(255,255,255,.4);
+      font-size: 13px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .badge-floating {
+      position: absolute;
+      background: var(--gold);
+      color: var(--darker);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-floating.left { bottom: 40px; left: -30px; }
+    .badge-floating.right { top: 40px; right: -20px; flex-direction: column; align-items: center; padding: 14px; }
+    .badge-floating.right .big { font-size: 28px; line-height: 1; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 90px 60px; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 30px; height: 2px;
+      background: var(--blue);
+    }
+
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--off-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-images {
+      position: relative;
+      height: 500px;
+    }
+
+    .about-img-main {
+      width: 70%;
+      height: 420px;
+      background: linear-gradient(135deg, #2a2000, #1a1200);
+      border-radius: 8px;
+      position: absolute;
+      top: 0; left: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      border: 3px solid var(--gold);
+    }
+
+    .about-img-secondary {
+      width: 55%;
+      height: 250px;
+      background: var(--gold);
+      border-radius: 8px;
+      position: absolute;
+      bottom: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.2);
+    }
+
+    .exp-badge {
+      position: absolute;
+      top: 50%;
+      left: 58%;
+      transform: translate(-50%, -50%);
+      background: var(--darker);
+      color: var(--white);
+      border-radius: 50%;
+      width: 100px; height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      border: 4px solid var(--gold);
+      text-align: center;
+    }
+
+    .exp-badge .num {
+      font-family: var(--font-head);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .exp-badge .lbl {
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    .about-checklist {
+      list-style: none;
+      margin: 24px 0 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .about-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .check-icon {
+      width: 22px; height: 22px;
+      background: var(--blue-soft);
+      border: 1px solid rgba(8,145,178,.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--blue);
+      font-size: 11px;
+      margin-top: 1px;
+    }
+
+    /* ── SERVICES ── */
+    #services {
+      background: var(--white);
+      text-align: center;
+    }
+
+    #services .section-header { text-align: center; margin-bottom: 56px; }
+    #services .section-label { justify-content: center; }
+    #services .section-label::before { display: none; }
+    #services .section-label::after { content: ''; width: 30px; height: 2px; background: var(--blue); }
+    #services .section-desc { margin: 0 auto; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 36px 28px;
+      text-align: left;
+      border: 2px solid transparent;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--blue);
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.1);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card.featured {
+      background: var(--darker);
+      color: var(--white);
+      border-color: var(--blue);
+    }
+
+    .service-icon {
+      width: 54px; height: 54px;
+      background: rgba(245,166,35,.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .service-card.featured .service-icon {
+      background: var(--blue-soft);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .service-card.featured p { color: rgba(255,255,255,.6); }
+
+    .btn-service {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      letter-spacing: .5px;
+      border: 1px solid rgba(8,145,178,.4);
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-service:hover { background: var(--blue); color: var(--white); }
+
+    .services-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+    }
+
+    .nav-arrow {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--light-gray);
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--dark);
+      transition: background .2s, border-color .2s, color .2s;
+    }
+
+    .nav-arrow:hover { background: var(--gold); border-color: var(--gold); color: var(--darker); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: var(--off-white);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .tcard {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      transition: transform .3s, box-shadow .3s;
+      border-top: 3px solid transparent;
+    }
+
+    .tcard:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.12); border-color: var(--blue); }
+
+    .tcard.featured {
+      background: var(--darker);
+      border-color: var(--gold);
+      grid-column: span 2;
+    }
+
+    .tcard-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--darker);
+      flex-shrink: 0;
+    }
+
+    .tcard-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--dark);
+    }
+
+    .tcard.featured .tcard-name { color: var(--white); }
+
+    .tcard-role {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    .tcard.featured .tcard-role { color: rgba(255,255,255,.5); }
+
+    .stars { color: var(--gold); font-size: 13px; margin-bottom: 10px; }
+
+    .tcard-text {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .tcard.featured .tcard-text { color: rgba(255,255,255,.7); }
+
+    /* ── WHY US ── */
+    #why-us {
+      background: var(--darker);
+      color: var(--white);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 8px;
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: background .3s, border-color .3s;
+    }
+
+    .why-card:hover { background: var(--blue-soft); border-color: rgba(8,145,178,.3); }
+
+    .why-num {
+      font-family: var(--font-head);
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(245,166,35,.15);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 50px;
+    }
+
+    .why-content h4 {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .why-content p {
+      font-size: 14px;
+      color: rgba(255,255,255,.5);
+      line-height: 1.6;
+    }
+
+    /* ── LATEST NEWS ── */
+    #news {
+      background: var(--white);
+    }
+
+    .news-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 24px;
+    }
+
+    .news-card {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--light-gray);
+      transition: transform .3s, box-shadow .3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.1); }
+
+    .news-card.featured { grid-row: span 2; }
+
+    .news-img {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #2a2000, #3a3000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .news-card.featured .news-img { height: 340px; }
+
+    .news-tag {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--blue);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .news-body { padding: 20px; }
+
+    .news-date {
+      font-size: 12px;
+      color: var(--blue);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .news-body h3 {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .news-body p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      margin-top: 14px;
+    }
+
+    /* ── CTA BAND ── */
+    #cta-band {
+      background: var(--gold);
+      padding: 60px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .cta-text h2 {
+      font-family: var(--font-head);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--darker);
+      line-height: 1.1;
+    }
+
+    .cta-text p {
+      font-size: 15px;
+      color: rgba(26,26,26,.7);
+      margin-top: 8px;
+    }
+
+    .btn-dark {
+      background: var(--darker);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 15px 36px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--darker);
+      color: rgba(255,255,255,.6);
+    }
+
+    .footer-main {
+      padding: 70px 60px 50px;
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+      gap: 50px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 16px 0 24px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      width: 36px; height: 36px;
+      border-radius: 4px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      font-size: 15px;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .social-btn:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+    .footer-col h4 {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 12px;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 28px; height: 2px;
+      background: var(--blue);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.5);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color .2s;
+    }
+
+    .footer-links a:hover { color: var(--blue); }
+    .footer-links a::before { content: '›'; color: var(--blue); font-size: 16px; }
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .contact-icon {
+      width: 32px; height: 32px;
+      background: rgba(8,145,178,.15);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: rgba(255,255,255,.5);
+      text-decoration: none;
+      line-height: 1.5;
+    }
+
+    .contact-item a:hover { color: var(--blue); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.4);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .footer-bottom a:hover { color: var(--blue); }
+
+    /* ── MOBILE MENU ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: var(--darker);
+      z-index: 999;
+      padding: 40px 30px;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      display: block;
+      padding: 14px 0;
+      font-size: 22px;
+      font-family: var(--font-head);
+      font-weight: 700;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: color .2s;
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav, section, #hero, #cta-band, .footer-main, .footer-bottom {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      #hero { grid-template-columns: 1fr; min-height: auto; padding-top: 60px; padding-bottom: 60px; }
+      #hero::before { display: none; }
+      .hero-image { display: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      #about { grid-template-columns: 1fr; }
+      .about-images { display: none; }
+      #testimonials { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+      .news-grid { grid-template-columns: 1fr; }
+      .news-card.featured { grid-row: span 1; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .tcard.featured { grid-column: span 1; }
+      #cta-band { flex-direction: column; text-align: center; }
+      .footer-main { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .hero-stats { flex-wrap: wrap; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">GT</div>
+    <div class="logo-text">
+      G-TECH <span>ENG.</span>
+      <span class="logo-sub">Borehole & Construction</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get A Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About Us</a>
+  <a href="projects.html" onclick="toggleMenu()">Projects</a>
+  <a href="services.html" onclick="toggleMenu()">Services</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--gold)">Get A Quote →</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Harare's Trusted Engineers</div>
+    <h1 class="hero-title">We Build <span>Strong</span><br>And Drill <span>Deep.</span></h1>
+    <p class="hero-sub">G-Tech Engineering delivers world-class borehole drilling and construction services across Harare and Zimbabwe. From foundations to water solutions — we engineer your future.</p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-gold">Get A Free Quote ›</a>
+      <a href="services.html" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Projects Done</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years Active</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-img-placeholder">
+      <img src="images/hero-bg.jpeg" alt="G-Tech Engineering team on site" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:8px;">
+      <div class="badge-floating left">✅ Licensed &amp; Insured</div>
+      <div class="badge-floating right">
+        <span class="big">⭐</span>
+        <span>5-Star</span>
+        <span style="font-size:10px;opacity:.8">Rated</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bg-text">G-TECH</div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="about-images">
+    <div class="about-img-main"><img src="images/about-main.jpg" alt="G-Tech Engineering construction site" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="about-img-secondary"><img src="images/about-secondary.jpg" alt="G-Tech borehole water solution" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div class="exp-badge">
+      <span class="num">10+</span>
+      <span class="lbl">Years<br>Exp.</span>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <div class="section-label">Who We Are</div>
+    <h2 class="section-title">Welcome To<br>G-Tech Engineering.</h2>
+    <p class="section-desc">Based in Harare, G-Tech Engineering is a leading borehole drilling and construction company. We transform ideas into long-lasting, engineered structures — and bring clean water to communities across Zimbabwe.</p>
+    <ul class="about-checklist">
+      <li>
+        <span class="check-icon">✓</span>
+        Professional borehole drilling with modern, deep-reach equipment for reliable water access.
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        Full construction services — residential, commercial and structural projects done right.
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        Water pump installation, testing, and maintenance for long-term performance.
+      </li>
+      <li>
+        <span class="check-icon">✓</span>
+        Licensed, insured, and fully compliant with Zimbabwe engineering standards.
+      </li>
+    </ul>
+    <a href="about.html" class="btn-gold">Read More ›</a>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">We Provide Services</h2>
+    <p class="section-desc">From groundwater solutions to full construction builds — G-Tech Engineering covers every angle of your project needs.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <h3>Residential Construction</h3>
+      <p>We build quality homes and residential structures from the ground up — strong foundations, premium finishes, on time and within budget.</p>
+      <a href="services.html" class="btn-service">Get Started ›</a>
+    </div>
+    <div class="service-card featured">
+      <div class="service-icon">💧</div>
+      <h3>Borehole Drilling</h3>
+      <p style="color:rgba(255,255,255,.6)">Our flagship service. We use advanced drilling rigs to reach reliable groundwater — for homes, farms, and commercial properties across Zimbabwe.</p>
+      <a href="services.html" class="btn-service">Get Started ›</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Pump Installation</h3>
+      <p>Complete pump supply, installation, and maintenance. We ensure consistent water delivery from your borehole to your tank or tap.</p>
+      <a href="services.html" class="btn-service">Get Started ›</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <h3>Commercial Builds</h3>
+      <p>Offices, warehouses, retail spaces — we deliver commercial construction projects that meet code and exceed expectations.</p>
+      <a href="services.html" class="btn-service">Get Started ›</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔩</div>
+      <h3>Structural Repair</h3>
+      <p>Cracked walls, compromised foundations, structural fatigue — we assess and restore the integrity of your existing structures.</p>
+      <a href="services.html" class="btn-service">Get Started ›</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <h3>Site Development</h3>
+      <p>Land clearing, levelling, fencing, paving, and full site preparation for residential and commercial developments.</p>
+      <a href="services.html" class="btn-service">Get Started ›</a>
+    </div>
+  </div>
+
+  <div class="services-nav">
+    <button class="nav-arrow">&#8592;</button>
+    <button class="nav-arrow">&#8594;</button>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div>
+    <div class="section-label">Client Reviews</div>
+    <h2 class="section-title">Hear From Our<br>Satisfied Clients.</h2>
+    <p class="section-desc">We let our work speak — but our clients speak louder. Here's what people across Harare say about working with G-Tech Engineering.</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="tcard featured">
+      <div class="tcard-head">
+        <div class="avatar">TM</div>
+        <div>
+          <div class="tcard-name">Tendai Moyo</div>
+          <div class="tcard-role">Homeowner, Borrowdale</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="tcard-text">G-Tech drilled our borehole in just two days and the water has been flowing strong ever since. Professional team, fair pricing, and they cleaned up after themselves. Highly recommend for anyone in Harare.</p>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head">
+        <div class="avatar">FK</div>
+        <div>
+          <div class="tcard-name">F. Khumalo</div>
+          <div class="tcard-role">Farm Owner, Mazowe</div>
+        </div>
+      </div>
+      <div class="stars">★★★★★</div>
+      <p class="tcard-text">Excellent service. They drilled 3 boreholes on my farm and all are producing well. Reliable and honest — will use again.</p>
+    </div>
+    <div class="tcard">
+      <div class="tcard-head">
+        <div class="avatar">SN</div>
+        <div>
+          <div class="tcard-name">S. Ncube</div>
+          <div class="tcard-role">Property Developer</div>
+        </div>
+      </div>
+      <div class="stars">★★★★☆</div>
+      <p class="tcard-text">Used G-Tech for a commercial construction project. Solid workmanship and good communication throughout. Delivered on schedule.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section id="why-us">
+  <div class="section-label" style="color:var(--blue)">Why Choose Us</div>
+  <h2 class="section-title" style="color:var(--white)">The G-Tech<br><span style="color:var(--gold)">Difference.</span></h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-content">
+        <h4>Modern Drilling Equipment</h4>
+        <p>We operate high-performance rotary drilling rigs capable of reaching deep aquifers — ensuring reliable water sources year-round.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-content">
+        <h4>Experienced Team</h4>
+        <p>Our engineers and drillers bring years of hands-on experience across residential, commercial and agricultural projects in Zimbabwe.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-content">
+        <h4>Transparent Pricing</h4>
+        <p>No hidden costs. We provide detailed quotes upfront and stick to them — giving you full confidence before the first drill turns.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <div class="why-content">
+        <h4>After-Sales Support</h4>
+        <p>We don't disappear after the job. G-Tech provides ongoing pump maintenance, water testing, and follow-up support for all clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS ── -->
+<section id="news">
+  <div class="news-header">
+    <div>
+      <div class="section-label">Updates</div>
+      <h2 class="section-title">Latest News<br>And Projects</h2>
+    </div>
+    <a href="projects.html" class="btn-gold">See All ›</a>
+  </div>
+
+  <div class="news-grid">
+    <a href="projects.html" class="news-card featured">
+      <div class="news-img">
+        <img src="images/news-construction.jpg" alt="Residential Development New Adbennie" style="width:100%;height:100%;object-fit:cover;">
+        <span class="news-tag">Construction</span>
+      </div>
+      <div class="news-body">
+        <div class="news-date">Featured Project</div>
+        <h3>Residential Development — New Adbennie, Harare</h3>
+        <p>G-Tech Engineering recently completed a multi-unit residential construction project in New Adbennie, delivering quality builds on schedule and within budget for the client.</p>
+        <span class="news-link">Read More ›</span>
+      </div>
+    </a>
+    <a href="projects.html" class="news-card">
+      <div class="news-img" style="height:160px;">
+        <img src="images/news-borehole.jpg" alt="Farm Borehole Drilling Mazowe" style="width:100%;height:100%;object-fit:cover;">
+        <span class="news-tag">Borehole</span>
+      </div>
+      <div class="news-body">
+        <div class="news-date">Recent Project</div>
+        <h3>Farm Borehole Drilling — Mazowe</h3>
+        <p>Successful deep-reach borehole project delivering consistent water supply to a large-scale farming operation in Mazowe.</p>
+        <span class="news-link">Read More ›</span>
+      </div>
+    </a>
+    <a href="projects.html" class="news-card">
+      <div class="news-img" style="height:160px;">
+        <img src="images/news-maintenance.jpg" alt="Pump Rehabilitation Service" style="width:100%;height:100%;object-fit:cover;">
+        <span class="news-tag">Maintenance</span>
+      </div>
+      <div class="news-body">
+        <div class="news-date">Service Update</div>
+        <h3>Pump Rehab Program Now Available</h3>
+        <p>G-Tech now offers borehole pump rehabilitation — breathing new life into underperforming or inactive water systems across Zimbabwe.</p>
+        <span class="news-link">Read More ›</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<div id="cta-band">
+  <div class="cta-text">
+    <h2>Ready To Start Your Project?</h2>
+    <p>Call us today or send a WhatsApp message — we respond fast.</p>
+  </div>
+  <a href="contact.html" class="btn-dark">Contact Us Today ›</a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="margin-bottom:0;">
+        <div class="logo-icon">GT</div>
+        <div class="logo-text">
+          G-TECH <span>ENG.</span>
+          <span class="logo-sub">Borehole & Construction</span>
+        </div>
+      </a>
+      <p>G-Tech Engineering is Harare's trusted partner for borehole drilling, pump installation, and construction. We build strong, drill deep, and deliver results.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100063761717785" target="_blank" class="social-btn" title="Facebook">f</a>
+        <a href="https://wa.me/263775710780" target="_blank" class="social-btn" title="WhatsApp">W</a>
+        <a href="mailto:gwenziwitness@gmail.com" class="social-btn" title="Email">@</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Borehole Drilling</a></li>
+        <li><a href="services.html">Pump Installation</a></li>
+        <li><a href="services.html">Residential Builds</a></li>
+        <li><a href="services.html">Commercial Builds</a></li>
+        <li><a href="services.html">Structural Repair</a></li>
+        <li><a href="services.html">Site Development</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <a href="#">8 Williams Way, New Adbennie, Harare, Zimbabwe</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <a href="tel:+263775710780">+263 775 710 780</a><br>
+          <a href="tel:+263714338997">+263 714 338 997</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <a href="https://wa.me/263775710780" target="_blank">WhatsApp Us Now</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <a href="mailto:gwenziwitness@gmail.com">gwenziwitness@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 G-Tech Engineering. All Rights Reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="contact.html">Get A Quote</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Close mobile menu on resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Intersection observer for fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .tcard, .why-card, .news-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

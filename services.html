@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | G-Tech Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #F5A623; --gold-dark: #D4891A;
+      --blue: #0891B2; --blue-dark: #0670A0; --blue-soft: rgba(8,145,178,.12);
+      --dark: #1A1A1A; --darker: #111111;
+      --white: #FFFFFF; --off-white: #F7F7F7; --gray: #666; --light-gray: #E8E8E8;
+      --font-head: 'Barlow Condensed', sans-serif; --font-body: 'Barlow', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--dark); background: var(--white); overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--darker); height: 70px; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; box-shadow: 0 2px 20px rgba(0,0,0,.4); }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 38px; height: 38px; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: 800; font-size: 18px; color: var(--darker); clip-path: polygon(10% 0%,90% 0%,100% 10%,100% 90%,90% 100%,10% 100%,0% 90%,0% 10%); }
+    .logo-text { font-family: var(--font-head); font-weight: 800; font-size: 20px; color: var(--white); letter-spacing: 1px; line-height: 1.1; }
+    .logo-text span { color: var(--gold); }
+    .logo-sub { display: block; font-family: var(--font-body); font-size: 9px; font-weight: 500; letter-spacing: 2px; color: rgba(255,255,255,.5); text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,.8); font-size: 14px; font-weight: 500; letter-spacing: .5px; transition: color .2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width .25s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { background: var(--gold) !important; color: var(--darker) !important; font-weight: 700 !important; padding: 10px 24px; border-radius: 4px; }
+    .nav-cta::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); }
+    .mobile-menu { display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0; background: var(--darker); z-index: 999; padding: 40px 30px; flex-direction: column; gap: 8px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { display: block; padding: 14px 0; font-size: 22px; font-family: var(--font-head); font-weight: 700; text-transform: uppercase; color: rgba(255,255,255,.7); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+
+    /* PAGE HERO */
+    .page-hero { margin-top: 70px; background: var(--darker); padding: 80px 60px 70px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40%; background: linear-gradient(135deg,rgba(8,145,178,.08),rgba(245,166,35,.05)); clip-path: polygon(20% 0,100% 0,100% 100%,0% 100%); }
+    .page-hero-bg { position: absolute; right: -20px; bottom: -30px; font-family: var(--font-head); font-size: 180px; font-weight: 800; color: rgba(255,255,255,.025); line-height: 1; pointer-events: none; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .breadcrumb a { color: rgba(255,255,255,.4); font-size: 13px; text-decoration: none; }
+    .breadcrumb a:hover { color: var(--blue); }
+    .breadcrumb span { color: rgba(255,255,255,.2); font-size: 13px; }
+    .breadcrumb .current { color: var(--blue); font-size: 13px; font-weight: 600; }
+    .page-hero h1 { font-family: var(--font-head); font-size: clamp(44px,7vw,80px); font-weight: 800; color: var(--white); text-transform: uppercase; line-height: 1; position: relative; z-index: 1; }
+    .page-hero h1 span { color: var(--gold); }
+    .page-hero p { color: rgba(255,255,255,.55); font-size: 16px; line-height: 1.7; max-width: 500px; margin-top: 16px; position: relative; z-index: 1; }
+
+    /* COMMONS */
+    section { padding: 80px 60px; }
+    .section-label { display: inline-flex; align-items: center; gap: 10px; color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+    .section-label::before { content: ''; width: 28px; height: 2px; background: var(--blue); }
+    .section-title { font-family: var(--font-head); font-size: clamp(34px,4vw,52px); font-weight: 800; line-height: 1.1; text-transform: uppercase; margin-bottom: 16px; }
+    .section-desc { font-size: 15px; color: var(--gray); line-height: 1.75; max-width: 580px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* SERVICES DETAILED */
+    #services-list { background: var(--off-white); }
+    .service-block { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; padding: 60px 0; border-bottom: 1px solid var(--light-gray); }
+    .service-block:last-child { border-bottom: none; }
+    .service-block.reverse { direction: rtl; }
+    .service-block.reverse > * { direction: ltr; }
+    .svc-visual { border-radius: 10px; overflow: hidden; height: 360px; display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; }
+    .svc-visual.blue-bg { background: linear-gradient(135deg, #061a2a, #0a2a3a); border: 3px solid var(--blue); }
+    .svc-visual.gold-bg { background: linear-gradient(135deg, #2a1a00, #3a2200); border: 3px solid var(--gold); }
+    .svc-visual.dark-bg { background: linear-gradient(135deg, #1a1a1a, #111); border: 3px solid rgba(255,255,255,.1); }
+    .svc-num { position: absolute; top: 16px; left: 16px; font-family: var(--font-head); font-size: 60px; font-weight: 800; color: rgba(255,255,255,.06); line-height: 1; }
+    .svc-tag { position: absolute; bottom: 16px; right: 16px; padding: 6px 14px; border-radius: 3px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .svc-tag.blue { background: var(--blue); color: var(--white); }
+    .svc-tag.gold { background: var(--gold); color: var(--darker); }
+    .svc-content .service-num { font-family: var(--font-head); font-size: 80px; font-weight: 800; color: var(--light-gray); line-height: .9; margin-bottom: 8px; }
+    .svc-content h2 { font-family: var(--font-head); font-size: clamp(28px,3vw,42px); font-weight: 800; text-transform: uppercase; margin-bottom: 14px; line-height: 1.1; }
+    .svc-content h2 span.blue { color: var(--blue); }
+    .svc-content h2 span.gold { color: var(--gold); }
+    .svc-content p { font-size: 15px; color: var(--gray); line-height: 1.75; margin-bottom: 24px; }
+    .svc-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .svc-features li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--dark); font-weight: 500; }
+    .feat-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .feat-dot.blue { background: var(--blue); }
+    .feat-dot.gold { background: var(--gold); }
+    .btn-gold { background: var(--gold); color: var(--darker); font-weight: 700; font-size: 14px; padding: 13px 30px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); }
+    .btn-blue { background: var(--blue); color: var(--white); font-weight: 700; font-size: 14px; padding: 13px 30px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-2px); }
+
+    /* PROCESS */
+    #process { background: var(--darker); }
+    #process .section-title { color: var(--white); }
+    #process .section-desc { color: rgba(255,255,255,.5); }
+    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 52px; position: relative; }
+    .process-steps::before { content: ''; position: absolute; top: 36px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--blue), var(--gold)); z-index: 0; }
+    .step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
+    .step-circle { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px; border: 3px solid; }
+    .step-circle.blue { background: var(--blue); border-color: var(--blue); }
+    .step-circle.gold { background: var(--gold); border-color: var(--gold); }
+    .step h4 { font-family: var(--font-head); font-size: 18px; font-weight: 700; text-transform: uppercase; color: var(--white); margin-bottom: 8px; }
+    .step p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .step-num { font-family: var(--font-head); font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--blue); text-transform: uppercase; margin-bottom: 8px; }
+
+    /* MINI CARDS */
+    #extra-services { background: var(--white); }
+    .mini-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 48px; }
+    .mini-card { padding: 28px; border-radius: 8px; border: 2px solid var(--light-gray); transition: border-color .3s, transform .3s, box-shadow .3s; }
+    .mini-card:hover { border-color: var(--blue); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.08); }
+    .mini-icon { font-size: 34px; margin-bottom: 14px; }
+    .mini-card h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+    .mini-card p { font-size: 13px; color: var(--gray); line-height: 1.65; }
+
+    /* CTA */
+    #cta-band { background: var(--gold); padding: 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+    .cta-text h2 { font-family: var(--font-head); font-size: clamp(28px,4vw,44px); font-weight: 800; text-transform: uppercase; color: var(--darker); line-height: 1.1; }
+    .cta-text p { font-size: 15px; color: rgba(26,26,26,.7); margin-top: 8px; }
+    .btn-dark { background: var(--darker); color: var(--white); font-weight: 700; font-size: 14px; padding: 15px 36px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; white-space: nowrap; flex-shrink: 0; transition: transform .2s, box-shadow .2s; }
+    .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.3); }
+
+    /* FOOTER */
+    footer { background: var(--darker); color: rgba(255,255,255,.6); }
+    .footer-main { padding: 70px 60px 50px; display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.4fr; gap: 50px; }
+    .footer-brand p { font-size: 14px; line-height: 1.7; margin: 16px 0 24px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-btn { width: 36px; height: 36px; border-radius: 4px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); text-decoration: none; font-size: 15px; transition: background .2s, color .2s, border-color .2s; }
+    .social-btn:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+    .footer-col h4 { font-family: var(--font-head); font-size: 16px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; position: relative; padding-bottom: 12px; }
+    .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 28px; height: 2px; background: var(--blue); }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,.5); font-size: 14px; display: flex; align-items: center; gap: 8px; transition: color .2s; }
+    .footer-links a:hover { color: var(--blue); }
+    .footer-links a::before { content: '›'; color: var(--blue); font-size: 16px; }
+    .contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; font-size: 14px; }
+    .contact-icon { width: 32px; height: 32px; background: rgba(8,145,178,.15); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .contact-item a { color: rgba(255,255,255,.5); text-decoration: none; line-height: 1.5; }
+    .contact-item a:hover { color: var(--blue); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .footer-bottom a:hover { color: var(--blue); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      nav, .page-hero, section, #cta-band, .footer-main, .footer-bottom { padding-left: 32px; padding-right: 32px; }
+      .service-block { grid-template-columns: 1fr; gap: 36px; }
+      .service-block.reverse { direction: ltr; }
+      .svc-visual { height: 260px; }
+      .process-steps { grid-template-columns: repeat(2,1fr); gap: 40px; }
+      .process-steps::before { display: none; }
+      .mini-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      nav { padding: 0 20px; }
+      .page-hero { padding: 60px 20px 50px; }
+      section { padding: 60px 20px; }
+      #cta-band { flex-direction: column; text-align: center; padding: 50px 20px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; gap: 36px; padding: 50px 20px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">GT</div>
+    <div class="logo-text">G-TECH <span>ENG.</span><span class="logo-sub">Borehole & Construction</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Get A Quote</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="about.html" onclick="toggleMenu()">About Us</a>
+  <a href="services.html" onclick="toggleMenu()">Services</a>
+  <a href="projects.html" onclick="toggleMenu()">Projects</a>
+  <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  <a href="contact.html" onclick="toggleMenu()" style="color:var(--gold)">Get A Quote →</a>
+</div>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span class="current">Services</span></div>
+  <h1>Our <span>Services</span></h1>
+  <p>From borehole drilling to full construction builds — G-Tech Engineering delivers comprehensive engineering solutions across Zimbabwe.</p>
+  <div class="page-hero-bg">SERVICES</div>
+</div>
+
+<!-- DETAILED SERVICES -->
+<section id="services-list">
+
+  <!-- Borehole Drilling -->
+  <div class="service-block reveal">
+    <div class="svc-visual blue-bg">
+      <img src="images/service-borehole.jpg" alt="Borehole Drilling" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+      <div class="svc-num">01</div>
+      <div class="svc-tag blue">Core Service</div>
+    </div>
+    <div class="svc-content">
+      <div class="service-num">01</div>
+      <h2>Borehole <span class="blue">Drilling</span></h2>
+      <p>Our flagship service. Using advanced rotary and percussion drilling rigs, G-Tech Engineering reaches reliable groundwater aquifers at depths up to 100m+, providing sustainable water sources for homes, farms, and businesses across Zimbabwe.</p>
+      <ul class="svc-features">
+        <li><span class="feat-dot blue"></span>Site assessment and geological survey before drilling</li>
+        <li><span class="feat-dot blue"></span>Rotary and cable percussion drilling methods available</li>
+        <li><span class="feat-dot blue"></span>PVC casing and screen installation</li>
+        <li><span class="feat-dot blue"></span>Borehole yield testing and water quality analysis</li>
+        <li><span class="feat-dot blue"></span>Completion report provided for every project</li>
+      </ul>
+      <a href="contact.html" class="btn-blue">Get A Borehole Quote ›</a>
+    </div>
+  </div>
+
+  <!-- Pump Installation -->
+  <div class="service-block reverse reveal">
+    <div class="svc-visual gold-bg">
+      <img src="images/service-pump.jpg" alt="Pump Installation" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+      <div class="svc-num">02</div>
+      <div class="svc-tag gold">Popular</div>
+    </div>
+    <div class="svc-content">
+      <div class="service-num">02</div>
+      <h2>Pump <span class="gold">Installation</span></h2>
+      <p>A borehole is only as good as its pump. G-Tech supplies, installs and commissions submersible and surface pumps from leading brands — ensuring reliable, efficient water delivery from your borehole to your storage tank or direct supply line.</p>
+      <ul class="svc-features">
+        <li><span class="feat-dot gold"></span>Submersible and surface pump supply and installation</li>
+        <li><span class="feat-dot gold"></span>Solar-powered pump systems available</li>
+        <li><span class="feat-dot gold"></span>Pump sizing and selection for your borehole yield</li>
+        <li><span class="feat-dot gold"></span>Electrical wiring and control panel installation</li>
+        <li><span class="feat-dot gold"></span>Ongoing maintenance contracts available</li>
+      </ul>
+      <a href="contact.html" class="btn-gold">Enquire About Pump Installation ›</a>
+    </div>
+  </div>
+
+  <!-- Residential Construction -->
+  <div class="service-block reveal">
+    <div class="svc-visual blue-bg" style="background: linear-gradient(135deg,#1a2a1a,#0d1a0d);">
+      <img src="images/service-residential.jpg" alt="Residential Construction" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+      <div class="svc-num">03</div>
+      <div class="svc-tag blue">Construction</div>
+    </div>
+    <div class="svc-content">
+      <div class="service-num">03</div>
+      <h2>Residential <span class="blue">Construction</span></h2>
+      <p>From foundations to finishing touches, G-Tech builds quality residential structures that stand the test of time. Whether you need a new family home, an extension, or outbuildings, our construction team delivers craftsmanship on every build.</p>
+      <ul class="svc-features">
+        <li><span class="feat-dot blue"></span>Full architectural and structural plans coordination</li>
+        <li><span class="feat-dot blue"></span>Foundation and substructure works</li>
+        <li><span class="feat-dot blue"></span>Brickwork, roofing, plastering, and finishing</li>
+        <li><span class="feat-dot blue"></span>Plumbing and electrical rough-in coordination</li>
+        <li><span class="feat-dot blue"></span>Transparent project timelines and budgets</li>
+      </ul>
+      <a href="contact.html" class="btn-blue">Start Your Build ›</a>
+    </div>
+  </div>
+
+  <!-- Commercial Construction -->
+  <div class="service-block reverse reveal">
+    <div class="svc-visual gold-bg" style="background: linear-gradient(135deg,#1a1a2a,#0d0d1a);">
+      <img src="images/service-commercial.jpg" alt="Commercial Builds" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+      <div class="svc-num">04</div>
+      <div class="svc-tag gold">Commercial</div>
+    </div>
+    <div class="svc-content">
+      <div class="service-num">04</div>
+      <h2>Commercial <span class="gold">Builds</span></h2>
+      <p>G-Tech Engineering handles commercial construction projects of all scales — from retail spaces and office parks to warehouses and industrial facilities. We deliver on time, on budget, and to specification, every single time.</p>
+      <ul class="svc-features">
+        <li><span class="feat-dot gold"></span>Office buildings, retail centres and warehouses</li>
+        <li><span class="feat-dot gold"></span>Industrial and agricultural structure builds</li>
+        <li><span class="feat-dot gold"></span>Compliance with Zimbabwe building standards</li>
+        <li><span class="feat-dot gold"></span>Project management from concept to handover</li>
+        <li><span class="feat-dot gold"></span>Post-completion defects warranty</li>
+      </ul>
+      <a href="contact.html" class="btn-gold">Discuss Your Commercial Project ›</a>
+    </div>
+  </div>
+
+  <!-- Structural Repair -->
+  <div class="service-block reveal">
+    <div class="svc-visual dark-bg">
+      <img src="images/service-repair.jpg" alt="Structural Repair" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+      <div class="svc-num">05</div>
+      <div class="svc-tag blue">Repair</div>
+    </div>
+    <div class="svc-content">
+      <div class="service-num">05</div>
+      <h2>Structural <span class="blue">Repair</span></h2>
+      <p>Cracked walls, sinking foundations, water damage, or aging structures — G-Tech's structural repair service restores the integrity and safety of your property. We assess, diagnose, and fix structural issues with precision and care.</p>
+      <ul class="svc-features">
+        <li><span class="feat-dot blue"></span>Foundation underpinning and stabilisation</li>
+        <li><span class="feat-dot blue"></span>Crack injection and wall repair</li>
+        <li><span class="feat-dot blue"></span>Waterproofing and damp-proofing treatments</li>
+        <li><span class="feat-dot blue"></span>Roof structure repair and replacement</li>
+        <li><span class="feat-dot blue"></span>Full structural assessment reports available</li>
+      </ul>
+      <a href="contact.html" class="btn-blue">Book A Structural Assessment ›</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label" style="color:var(--gold)">How It Works</div>
+  <h2 class="section-title" style="color:var(--white)">Our Simple<br><span style="color:var(--gold)">4-Step Process.</span></h2>
+  <p class="section-desc">From your first call to project completion — here's exactly how G-Tech Engineering works for you.</p>
+  <div class="process-steps">
+    <div class="step reveal">
+      <div class="step-circle blue">📞</div>
+      <div class="step-num">Step 01</div>
+      <h4>Contact Us</h4>
+      <p>Call, WhatsApp, or fill out our contact form. Tell us about your project and we'll respond within 24 hours.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-circle gold">🔍</div>
+      <div class="step-num">Step 02</div>
+      <h4>Site Assessment</h4>
+      <p>Our team visits your site, assesses conditions, and provides a detailed, no-obligation quote tailored to your needs.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-circle blue">🛠️</div>
+      <div class="step-num">Step 03</div>
+      <h4>We Get To Work</h4>
+      <p>Our skilled engineers and drillers execute your project with precision — on schedule and within the agreed budget.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-circle gold">✅</div>
+      <div class="step-num">Step 04</div>
+      <h4>Handover &amp; Support</h4>
+      <p>We hand over a completed project, provide all documentation, and remain available for ongoing support and maintenance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL SERVICES -->
+<section id="extra-services">
+  <div class="section-label">Also Available</div>
+  <h2 class="section-title">Additional<br>Services.</h2>
+  <div class="mini-grid">
+    <div class="mini-card reveal">
+      <div class="mini-icon">🌿</div>
+      <h3>Site Development</h3>
+      <p>Land clearing, levelling, fencing, paving, and full site preparation for any residential or commercial development.</p>
+    </div>
+    <div class="mini-card reveal">
+      <div class="mini-icon">🧪</div>
+      <h3>Water Quality Testing</h3>
+      <p>Laboratory water quality analysis to confirm your borehole water is safe for drinking, irrigation, or industrial use.</p>
+    </div>
+    <div class="mini-card reveal">
+      <div class="mini-icon">☀️</div>
+      <h3>Solar Pump Systems</h3>
+      <p>Off-grid solar-powered borehole pump systems — reliable water access even during ZESA power cuts.</p>
+    </div>
+    <div class="mini-card reveal">
+      <div class="mini-icon">🔄</div>
+      <h3>Pump Rehabilitation</h3>
+      <p>Revive old, underperforming, or non-functional borehole pumps — a cost-effective alternative to full replacement.</p>
+    </div>
+    <div class="mini-card reveal">
+      <div class="mini-icon">🏗️</div>
+      <h3>Retaining Walls</h3>
+      <p>Structural retaining walls for sloped sites, drainage control, and property boundary reinforcement.</p>
+    </div>
+    <div class="mini-card reveal">
+      <div class="mini-icon">🛡️</div>
+      <h3>Maintenance Contracts</h3>
+      <p>Annual maintenance agreements to keep your borehole pump, casing, and water system performing at peak efficiency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div id="cta-band">
+  <div class="cta-text">
+    <h2>Not Sure Which Service You Need?</h2>
+    <p>Call us and we'll advise you — no obligation, no pressure.</p>
+  </div>
+  <a href="contact.html" class="btn-dark">Talk To Our Team ›</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><div class="logo-icon">GT</div><div class="logo-text">G-TECH <span>ENG.</span><span class="logo-sub">Borehole & Construction</span></div></a>
+      <p>G-Tech Engineering is Harare's trusted partner for borehole drilling, pump installation, and construction. We build strong, drill deep, and deliver results.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100063761717785" target="_blank" class="social-btn">f</a>
+        <a href="https://wa.me/263775710780" target="_blank" class="social-btn">W</a>
+        <a href="mailto:gwenziwitness@gmail.com" class="social-btn">@</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Our Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="services.html">Borehole Drilling</a></li><li><a href="services.html">Pump Installation</a></li><li><a href="services.html">Residential Builds</a></li><li><a href="services.html">Commercial Builds</a></li><li><a href="services.html">Structural Repair</a></li></ul></div>
+    <div class="footer-col"><h4>Contact Us</h4>
+      <div class="contact-item"><div class="contact-icon">📍</div><a href="#">8 Williams Way, New Adbennie, Harare</a></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><a href="tel:+263775710780">+263 775 710 780</a><br><a href="tel:+263714338997">+263 714 338 997</a></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><a href="mailto:gwenziwitness@gmail.com">gwenziwitness@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 G-Tech Engineering. All Rights Reserved.</p>
+    <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="contact.html">Get A Quote</a></div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  window.addEventListener('resize', () => { if (window.innerWidth > 768) document.getElementById('mobileMenu').classList.remove('open'); });
+  const observer = new IntersectionObserver((e) => { e.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); }); }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
