@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | G-Tech Engineering — Borehole Drilling Portfolio</title>
+  <meta name="description" content="Browse G-Tech Engineering's project portfolio — borehole drilling, pump installations, and construction projects across Harare and Zimbabwe." />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23F2541D'/%3E%3Ctext x='16' y='21' font-family='Arial, sans-serif' font-size='13' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3EGT%3C/text%3E%3C/svg%3E" />
+
+  <link rel="canonical" href="https://www.gtechdrilling.co.zw/projects.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects | G-Tech Engineering" />
+  <meta property="og:description" content="Browse G-Tech Engineering's project portfolio across Harare and Zimbabwe." />
+  <meta property="og:url" content="https://www.gtechdrilling.co.zw/projects.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:          #FFFFFF;
+      --bg-soft:     #F6F7F9;
+      --surface:     #FFFFFF;
+      --ink:         #14171C;
+      --ink-soft:    #3A3F47;
+      --text-mid:    #5B6470;
+      --text-dim:    #8B93A0;
+      --border:      rgba(20,23,28,0.09);
+      --border-soft: rgba(20,23,28,0.06);
+      --orange:      #F2541D;
+      --orange-dark: #D8430F;
+      --orange-soft: rgba(242,84,29,0.08);
+      --orange-soft2:rgba(242,84,29,0.14);
+      --shadow-soft: 0 24px 60px rgba(20,23,28,0.08);
+      --shadow-card: 0 10px 32px rgba(20,23,28,0.06);
+      --r-lg: 28px;
+      --r-md: 18px;
+      --r-sm: 10px;
+      --ff-display: 'Clash Display', 'Satoshi', sans-serif;
+      --ff-body:    'Satoshi', system-ui, sans-serif;
+      --ff-mono:    'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; scrollbar-color: var(--orange) var(--bg-soft); scrollbar-width: thin; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    :focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; border-radius: 4px; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-soft); }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+    /* ─── UTILITY ─── */
+    .eyebrow-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange-soft); color: var(--orange-dark);
+      font-family: var(--ff-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 7px 14px 7px 12px; border-radius: 9999px;
+    }
+    .eyebrow-tag::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--orange); flex-shrink: 0;
+    }
+
+    .eyebrow-center {
+      font-family: var(--ff-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--orange-dark); background: var(--orange-soft);
+      padding: 7px 16px; border-radius: 9999px; display: inline-block;
+    }
+
+    .btn-orange {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange); color: #fff;
+      font-family: var(--ff-body); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 15px 26px; border-radius: var(--r-sm);
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .btn-orange:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .btn-orange:active { transform: scale(0.98); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--ink);
+      font-family: var(--ff-body); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.02em; padding: 14px 24px;
+      border-radius: var(--r-sm); border: 1px solid var(--border);
+      text-decoration: none; transition: border-color 0.2s, transform 0.15s, background 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { border-color: var(--ink); background: var(--bg-soft); transform: translateY(-2px); }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: sticky; top: 0; z-index: 200; width: 100%;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft);
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 28px rgba(20,23,28,0.06); border-color: transparent; }
+
+    .nav-inner {
+      max-width: 1320px; margin: 0 auto; padding: 0 32px;
+      height: 84px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-text { font-family: var(--ff-display); font-weight: 700; font-size: 19px; color: var(--ink); line-height: 1.1; letter-spacing: -0.01em; }
+    .nav-logo-text small {
+      display: block; font-family: var(--ff-mono); font-size: 9px; font-weight: 500;
+      letter-spacing: 0.14em; color: var(--text-dim); text-transform: uppercase; margin-top: 3px;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: var(--ink-soft); text-decoration: none; font-size: 14.5px; font-weight: 500;
+      transition: color 0.2s; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; left: 0; bottom: -6px;
+      width: 0; height: 2px; background: var(--orange);
+      transition: width 0.25s cubic-bezier(0.16,1,0.3,1);
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after, .nav-links a.active-link::after { width: 100%; }
+    .nav-links a.active-link { color: var(--ink); }
+
+    .nav-phone {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange); color: #fff; font-size: 13.5px; font-weight: 700;
+      padding: 11px 20px; border-radius: 9999px; text-decoration: none;
+      flex-shrink: 0; transition: background 0.2s, transform 0.15s;
+    }
+    .nav-phone:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .nav-phone-icon {
+      width: 28px; height: 28px; background: rgba(255,255,255,0.2);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 8px; flex-shrink: 0;
+    }
+    .hamburger span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.3s cubic-bezier(0.16,1,0.3,1); display: block; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none; position: fixed; top: 12px; left: 12px; right: 12px; z-index: 190;
+      background-color: #111316 !important; border-radius: 22px;
+      flex-direction: column; padding: 20px 20px 24px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.55);
+      opacity: 0; pointer-events: none;
+      transform: translateY(-16px) scale(0.97);
+      transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.3s cubic-bezier(0.16,1,0.3,1);
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; transform: translateY(0) scale(1); }
+    .mobile-menu-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 4px; padding-bottom: 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background-color: #111316 !important;
+    }
+    .mobile-menu-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .mobile-menu-logo-text { font-family: var(--ff-display); font-size: 17px; font-weight: 700; color: #ffffff !important; letter-spacing: -0.01em; }
+    .mobile-close-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #ffffff !important; transition: background 0.2s; flex-shrink: 0;
+    }
+    .mobile-close-btn:hover { background: rgba(255,255,255,0.2); }
+    .mobile-menu-nav { display: flex; flex-direction: column; background-color: #111316 !important; }
+    .mobile-menu-nav a {
+      font-family: var(--ff-body); font-size: 17px; font-weight: 500;
+      color: #c8ccd4 !important; background-color: #111316 !important;
+      text-decoration: none; padding: 16px 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.08); display: block;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.35s cubic-bezier(0.16,1,0.3,1), transform 0.35s cubic-bezier(0.16,1,0.3,1), color 0.2s;
+    }
+    .mobile-menu-nav a:last-child { border-bottom: none; }
+    .mobile-menu.open .mobile-menu-nav a { opacity: 1; transform: translateY(0); }
+    .mobile-menu.open .mobile-menu-nav a:nth-child(1) { transition-delay: 0.05s; }
+    .mobile-menu.open .mobile-menu-nav a:nth-child(2) { transition-delay: 0.09s; }
+    .mobile-menu.open .mobile-menu-nav a:nth-child(3) { transition-delay: 0.13s; }
+    .mobile-menu.open .mobile-menu-nav a:nth-child(4) { transition-delay: 0.17s; }
+    .mobile-menu-nav a:hover { color: #ffffff !important; }
+    .mobile-menu-nav a.active-link { color: #F2541D !important; }
+    .mobile-menu-cta {
+      display: block; width: 100%; margin-top: 20px; padding: 16px;
+      background: var(--orange); color: #000; font-family: var(--ff-body);
+      font-size: 15px; font-weight: 700; text-align: center; text-decoration: none;
+      border-radius: 14px; opacity: 0; transform: translateY(8px);
+      transition: opacity 0.35s 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.35s 0.2s cubic-bezier(0.16,1,0.3,1), background 0.2s;
+    }
+    .mobile-menu.open .mobile-menu-cta { opacity: 1; transform: translateY(0); }
+    .mobile-menu-cta:hover { background: var(--orange-dark); color: #fff; }
+
+    /* ─── PAGE HERO ─── */
+    .page-hero {
+      padding: 72px 32px 64px;
+      background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .page-hero-inner {
+      max-width: 1320px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
+    }
+    .page-hero h1 {
+      font-family: var(--ff-display); font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700; letter-spacing: -0.03em; line-height: 1.05;
+      color: var(--ink); max-width: 18ch;
+    }
+    .page-hero p {
+      font-size: 17px; color: var(--text-mid); max-width: 52ch; line-height: 1.65;
+    }
+    .page-hero-stats {
+      display: flex; gap: 40px; margin-top: 8px; flex-wrap: wrap;
+    }
+    .hero-stat-item { display: flex; flex-direction: column; gap: 3px; }
+    .hero-stat-num {
+      font-family: var(--ff-display); font-size: 34px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.03em; line-height: 1;
+    }
+    .hero-stat-num span { color: var(--orange); }
+    .hero-stat-label { font-family: var(--ff-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
+
+    /* ─── FILTER BAR ─── */
+    .filter-section {
+      padding: 40px 32px 0;
+      max-width: 1320px; margin: 0 auto;
+    }
+    .filter-bar {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-family: var(--ff-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 9px 18px; border-radius: 9999px;
+      border: 1px solid var(--border); background: var(--bg);
+      color: var(--text-mid); cursor: pointer;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: var(--orange); color: var(--orange-dark); }
+    .filter-btn.active {
+      background: var(--orange); border-color: var(--orange);
+      color: #fff;
+    }
+    .filter-count {
+      margin-left: auto; font-family: var(--ff-mono); font-size: 11px;
+      color: var(--text-dim); letter-spacing: 0.06em;
+    }
+
+    /* ─── PROJECTS GRID ─── */
+    .projects-section {
+      padding: 32px 32px 80px;
+    }
+    .projects-grid {
+      max-width: 1320px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* ─── PROJECT CARD ─── */
+    .proj-card {
+      background: var(--surface); border-radius: var(--r-md);
+      border: 1px solid var(--border-soft); overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      cursor: pointer;
+    }
+    .proj-card:hover { box-shadow: var(--shadow-card); transform: translateY(-4px); }
+
+    /* featured card spans 2 cols */
+    .proj-card.featured { grid-column: span 2; }
+
+    .proj-card-media {
+      position: relative; width: 100%;
+      background: var(--bg-soft); overflow: hidden;
+    }
+    .proj-card.featured .proj-card-media { height: 340px; }
+    .proj-card:not(.featured) .proj-card-media { height: 220px; }
+
+    .proj-card-media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .proj-card:hover .proj-card-media img { transform: scale(1.04); }
+
+    /* skeleton loader for images */
+    .proj-card-media img:not([src]), .proj-card-media img[src=""] {
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%; animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+    /* ─── VIDEO CARD ─── */
+    .proj-card.video-card .proj-card-media { position: relative; }
+    .proj-yt-thumb {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .proj-card:hover .proj-yt-thumb { transform: scale(1.04); }
+    .proj-play-btn {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(14,17,22,0.35);
+      transition: background 0.2s;
+    }
+    .proj-card:hover .proj-play-btn { background: rgba(14,17,22,0.5); }
+    .proj-play-circle {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--orange); display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(242,84,29,0.5);
+      transition: transform 0.2s;
+    }
+    .proj-card:hover .proj-play-circle { transform: scale(1.1); }
+    .proj-card.featured .proj-play-circle { width: 72px; height: 72px; }
+
+    /* type badge */
+    .proj-type-badge {
+      position: absolute; top: 14px; left: 14px;
+      font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 11px; border-radius: 9999px;
+      background: rgba(255,255,255,0.92); color: var(--ink);
+      backdrop-filter: blur(8px);
+    }
+    .proj-type-badge.video { background: var(--orange); color: #fff; }
+
+    .proj-card-body { padding: 22px 24px 26px; }
+    .proj-card-category {
+      font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--orange-dark); margin-bottom: 8px;
+    }
+    .proj-card-title {
+      font-family: var(--ff-display); font-size: 19px; font-weight: 700;
+      color: var(--ink); letter-spacing: -0.02em; line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .proj-card.featured .proj-card-title { font-size: 24px; }
+    .proj-card-desc {
+      font-size: 14px; color: var(--text-mid); line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .proj-card-meta {
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .proj-meta-item {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim);
+    }
+    .proj-meta-item svg { flex-shrink: 0; color: var(--orange); }
+
+    /* ─── EMPTY STATE ─── */
+    .empty-state {
+      grid-column: 1 / -1; text-align: center; padding: 80px 20px;
+      display: none;
+    }
+    .empty-state.visible { display: block; }
+    .empty-state p { font-size: 16px; color: var(--text-mid); margin-top: 12px; }
+    .empty-icon { font-size: 48px; margin-bottom: 8px; }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(8,10,14,0.96); backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .lightbox.open { opacity: 1; pointer-events: all; }
+    .lightbox-inner {
+      position: relative; max-width: min(900px, 92vw);
+      width: 100%;
+    }
+    .lightbox-img {
+      width: 100%; max-height: 80vh; object-fit: contain;
+      border-radius: var(--r-md);
+    }
+    .lightbox-iframe-wrap {
+      position: relative; width: 100%; border-radius: var(--r-md); overflow: hidden;
+      padding-top: 56.25%; /* 16:9 */
+    }
+    .lightbox-iframe-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      border: none;
+    }
+    .lightbox-caption {
+      margin-top: 16px; text-align: center;
+      font-size: 14px; color: rgba(255,255,255,0.6);
+    }
+    .lightbox-close {
+      position: absolute; top: -48px; right: 0;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; transition: background 0.2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; transition: background 0.2s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.22); }
+    .lightbox-prev { right: calc(100% + 14px); }
+    .lightbox-next { left: calc(100% + 14px); }
+
+    /* ─── CTA BAND ─── */
+    #cta-band { padding: 0 32px 80px; }
+    .cta-card {
+      max-width: 1320px; margin: 0 auto;
+      background: var(--ink); border-radius: var(--r-lg); padding: 56px 56px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+      flex-wrap: wrap;
+    }
+    .cta-card .eyebrow-tag { background: rgba(242,84,29,0.15); color: #f98a62; }
+    .cta-card .eyebrow-tag::before { background: var(--orange); }
+    .cta-card h2 { font-family: var(--ff-display); font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; color: #fff; margin-top: 12px; letter-spacing: -0.02em; }
+    .cta-card p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.65; margin-top: 10px; max-width: 46ch; }
+    .cta-text { flex: 1; min-width: 240px; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: #fff;
+      font-family: var(--ff-body); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 15px 26px; border-radius: var(--r-sm); text-decoration: none;
+      transition: filter 0.2s, transform 0.15s;
+    }
+    .btn-whatsapp:hover { filter: brightness(1.1); transform: translateY(-2px); }
+    .cta-card .btn-outline { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); justify-content: center; }
+    .cta-card .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); color: #fff; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border-soft);
+    }
+    .footer-top {
+      max-width: 1320px; margin: 0 auto; padding: 60px 32px 48px;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 48px;
+    }
+    .footer-brand p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-top: 16px; max-width: 32ch; }
+    .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--border); display: flex; align-items: center; justify-content: center;
+      color: var(--ink-soft); text-decoration: none; transition: background 0.2s, color 0.2s;
+    }
+    .social-btn:hover { background: var(--orange); color: #fff; }
+    .footer-col h4 { font-family: var(--ff-display); font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 18px; letter-spacing: -0.01em; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13.5px; color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-contact-row { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
+    .footer-contact-row svg { flex-shrink: 0; margin-top: 2px; color: var(--orange); }
+    .footer-contact-row span { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+    .footer-contact-row a { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+    .footer-contact-row a:hover { color: var(--orange); }
+    .footer-bottom {
+      max-width: 1320px; margin: 0 auto; padding: 20px 32px;
+      border-top: 1px solid var(--border-soft);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--text-dim); }
+    .footer-bottom div { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-bottom a { font-size: 13px; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--orange); }
+
+    /* ─── FAB ─── */
+    .fab-whatsapp {
+      position: fixed; bottom: 28px; right: 28px; z-index: 300;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .fab-whatsapp:hover { transform: scale(1.1); box-shadow: 0 12px 36px rgba(37,211,102,0.5); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1100px) {
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .proj-card.featured { grid-column: span 2; }
+    }
+    @media (max-width: 900px) {
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 52px 20px 48px; }
+      .filter-section { padding: 32px 20px 0; }
+      .projects-section { padding: 24px 20px 60px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .proj-card.featured { grid-column: span 1; }
+      .proj-card.featured .proj-card-media { height: 220px; }
+      #cta-band { padding: 0 20px 60px; }
+      .cta-card { padding: 36px 28px; flex-direction: column; }
+      .lightbox-prev, .lightbox-next { display: none; }
+      .footer-top { grid-template-columns: 1fr; padding: 40px 20px 32px; }
+      .footer-bottom { padding: 16px 20px; flex-direction: column; align-items: flex-start; gap: 8px; }
+      .page-hero-stats { gap: 28px; }
+    }
+    @media (max-width: 480px) {
+      .nav-inner { padding: 0 20px; }
+      .filter-bar { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-mark" width="30" height="30" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2L22 15L14 12L6 15L14 2Z" fill="#14171C"/>
+          <circle cx="14" cy="22.5" r="3.4" fill="#F2541D"/>
+        </svg>
+        <div class="nav-logo-text">G-Tech<small>Drilling &amp; Construction</small></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active-link">Projects</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <a href="tel:+263775710780" class="nav-phone">
+        <span class="nav-phone-icon">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.15 6.15l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.99 15l-.07 1.92z"/></svg>
+        </span>
+        +263 775 710 780
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="mobile-menu-logo" onclick="closeMobile()">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+          <path d="M14 2L22 15L14 12L6 15L14 2Z" fill="#ffffff"/>
+          <circle cx="14" cy="22.5" r="3.4" fill="#F2541D"/>
+        </svg>
+        <span class="mobile-menu-logo-text">G-Tech</span>
+      </a>
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="index.html" onclick="closeMobile()">Home</a>
+      <a href="about.html" onclick="closeMobile()">About</a>
+      <a href="services.html" onclick="closeMobile()">Services</a>
+      <a href="projects.html" class="active-link" onclick="closeMobile()">Projects</a>
+    </nav>
+    <a href="contact.html" class="mobile-menu-cta" onclick="closeMobile()">Contact Us</a>
+  </div>
+
+  <!-- ─── PAGE HERO ─── -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow-tag reveal">Our Portfolio</span>
+      <h1 class="reveal">Work that speaks for itself.</h1>
+      <p class="reveal">From residential boreholes in Harare to large farm installations across Zimbabwe — every project we've completed is a promise kept.</p>
+      <div class="page-hero-stats reveal">
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">340<span>+</span></div>
+          <div class="hero-stat-label">Projects completed</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">16<span>+</span></div>
+          <div class="hero-stat-label">Years in the field</div>
+        </div>
+        <div class="hero-stat-item">
+          <div class="hero-stat-num">98<span>%</span></div>
+          <div class="hero-stat-label">Success rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FILTER BAR ─── -->
+  <div class="filter-section reveal">
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="drilling">Borehole Drilling</button>
+      <button class="filter-btn" data-filter="pump">Pump Installation</button>
+      <button class="filter-btn" data-filter="construction">Construction</button>
+      <button class="filter-btn" data-filter="rehabilitation">Rehabilitation</button>
+      <button class="filter-btn" data-filter="video">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="display:inline;vertical-align:middle;margin-right:4px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Videos
+      </button>
+      <span class="filter-count" id="filterCount">Showing all projects</span>
+    </div>
+  </div>
+
+  <!-- ─── PROJECTS GRID ─── -->
+  <section class="projects-section">
+    <div class="projects-grid" id="projectsGrid">
+
+      <!-- ── PHOTO CARDS ── -->
+      <!-- Replace src values with your actual image paths e.g. images/project-farm.jpeg -->
+
+      <div class="proj-card featured reveal" data-category="drilling" data-type="photo" data-src="images/borehole.jpeg" data-caption="Residential borehole — Borrowdale, Harare">
+        <div class="proj-card-media">
+          <img src="images/borehole.jpeg" alt="Borehole drilling project Borrowdale Harare" loading="lazy" />
+          <span class="proj-type-badge">Photo</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Borehole Drilling</div>
+          <h3 class="proj-card-title">Residential Borehole — Borrowdale</h3>
+          <p class="proj-card-desc">60-metre deep aquifer borehole serving a family of eight. Site survey, rotary drilling, casing, and pump commissioning completed in 4 days.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Borrowdale, Harare
+            </span>
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              4 days
+            </span>
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              60m depth
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-1" data-category="pump" data-type="photo" data-src="images/pump.jpeg" data-caption="Pump installation — Highlands, Harare">
+        <div class="proj-card-media">
+          <img src="images/pump.jpeg" alt="Submersible pump installation Highlands Harare" loading="lazy" />
+          <span class="proj-type-badge">Photo</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Pump Installation</div>
+          <h3 class="proj-card-title">Submersible Pump — Highlands</h3>
+          <p class="proj-card-desc">Solar-powered submersible pump system installed and commissioned for a residential property in Highlands.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Highlands, Harare
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal" data-category="drilling" data-type="photo" data-src="images/drilling-rig.jpeg" data-caption="Farm borehole — Mazowe">
+        <div class="proj-card-media">
+          <img src="images/drilling-rig.jpeg" alt="Drilling rig on farm site Mazowe Zimbabwe" loading="lazy" />
+          <span class="proj-type-badge">Photo</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Borehole Drilling</div>
+          <h3 class="proj-card-title">Farm Borehole — Mazowe</h3>
+          <p class="proj-card-desc">High-yield irrigation borehole for a 200-hectare tobacco farm. Drilled to 85 metres, yielding 4,000 litres per hour.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Mazowe
+            </span>
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              85m depth
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-1" data-category="construction" data-type="photo" data-src="images/construction.jpeg" data-caption="Construction project — New Adbennie, Harare">
+        <div class="proj-card-media">
+          <img src="images/construction.jpeg" alt="Construction project New Adbennie Harare" loading="lazy" />
+          <span class="proj-type-badge">Photo</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Construction</div>
+          <h3 class="proj-card-title">Multi-Unit Development — New Adbennie</h3>
+          <p class="proj-card-desc">Water infrastructure and reticulation for a multi-unit residential development. Borehole, tank installation, and full piping completed on schedule.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              New Adbennie, Harare
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal reveal-delay-2" data-category="rehabilitation" data-type="photo" data-src="images/rehab.jpeg" data-caption="Borehole rehabilitation — Ruwa">
+        <div class="proj-card-media">
+          <img src="images/rehab.jpeg" alt="Borehole rehabilitation Ruwa Zimbabwe" loading="lazy" />
+          <span class="proj-type-badge">Photo</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Rehabilitation</div>
+          <h3 class="proj-card-title">Borehole Rehabilitation — Ruwa</h3>
+          <p class="proj-card-desc">Restored a collapsed borehole to full yield through re-screening and cleaning — no redrilling required. Saved the client 60% of the full replacement cost.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Ruwa
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── VIDEO CARDS (YouTube) ── -->
+      <!-- To add a video: copy a video card block, replace the YouTube video ID (YOUTUBE_ID_1 etc.)
+           The thumbnail URL format is: https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg -->
+
+      <div class="proj-card video-card featured reveal" data-category="drilling" data-type="video" data-yt-id="YOUTUBE_ID_1" data-caption="Rotary drilling in action — deep aquifer project">
+        <div class="proj-card-media">
+          <img class="proj-yt-thumb" src="https://img.youtube.com/vi/YOUTUBE_ID_1/maxresdefault.jpg" alt="G-Tech drilling video" loading="lazy" />
+          <div class="proj-play-btn">
+            <div class="proj-play-circle">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <span class="proj-type-badge video">▶ Video</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Borehole Drilling · Video</div>
+          <h3 class="proj-card-title">Rotary Drilling in Action</h3>
+          <p class="proj-card-desc">Watch our rig work through hard rock to reach a deep aquifer on a commercial farm site. From surface to casing — full process captured on site.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              YouTube
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card video-card reveal reveal-delay-1" data-category="pump" data-type="video" data-yt-id="YOUTUBE_ID_2" data-caption="Pump commissioning walkthrough">
+        <div class="proj-card-media">
+          <img class="proj-yt-thumb" src="https://img.youtube.com/vi/YOUTUBE_ID_2/maxresdefault.jpg" alt="G-Tech pump installation video" loading="lazy" />
+          <div class="proj-play-btn">
+            <div class="proj-play-circle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <span class="proj-type-badge video">▶ Video</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Pump Installation · Video</div>
+          <h3 class="proj-card-title">Pump Commissioning Walkthrough</h3>
+          <p class="proj-card-desc">Step-by-step pump commissioning on a residential borehole — from lowering the pump to first water flow.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              YouTube
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card video-card reveal reveal-delay-2" data-category="construction" data-type="video" data-yt-id="YOUTUBE_ID_3" data-caption="Tank and reticulation installation">
+        <div class="proj-card-media">
+          <img class="proj-yt-thumb" src="https://img.youtube.com/vi/YOUTUBE_ID_3/maxresdefault.jpg" alt="G-Tech tank installation video" loading="lazy" />
+          <div class="proj-play-btn">
+            <div class="proj-play-circle">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <span class="proj-type-badge video">▶ Video</span>
+        </div>
+        <div class="proj-card-body">
+          <div class="proj-card-category">Construction · Video</div>
+          <h3 class="proj-card-title">Tank &amp; Reticulation Installation</h3>
+          <p class="proj-card-desc">Full tank installation and reticulation piping on a commercial property — all completed within 48 hours of borehole handover.</p>
+          <div class="proj-card-meta">
+            <span class="proj-meta-item">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              YouTube
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── EMPTY STATE ─── -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">📷</div>
+        <h3 style="font-family:var(--ff-display);font-size:22px;color:var(--ink);">No projects in this category yet.</h3>
+        <p>Check back soon — more projects are being added regularly.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CTA BAND ─── -->
+  <div id="cta-band">
+    <div class="cta-card reveal">
+      <div class="cta-text">
+        <span class="eyebrow-tag">Start Your Project</span>
+        <h2>Ready to secure reliable water?</h2>
+        <p>Contact us for a free site visit and borehole quote. We cover Harare and all surrounding provinces — farms, homes, and commercial properties.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://wa.me/263775710780" target="_blank" rel="noopener" class="btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.117 1.533 5.845L.057 23.488a.5.5 0 00.612.612l5.643-1.476A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.578 9.578 0 01-4.885-1.337l-.35-.208-3.613.945.963-3.521-.228-.361A9.563 9.563 0 012.4 12C2.4 6.698 6.698 2.4 12 2.4S21.6 6.698 21.6 12 17.302 21.6 12 21.6z"/></svg>
+          WhatsApp Us Now
+        </a>
+        <a href="contact.html" class="btn-outline" style="justify-content:center;">Request a Formal Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="text-decoration:none;">
+          <svg width="30" height="30" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2L22 15L14 12L6 15L14 2Z" fill="#14171C"/>
+            <circle cx="14" cy="22.5" r="3.4" fill="#F2541D"/>
+          </svg>
+          <div class="nav-logo-text">G-Tech<small>Drilling &amp; Construction</small></div>
+        </a>
+        <p>Zimbabwe's trusted borehole drilling company. Deep aquifer drilling, pump installation, and water solutions — for homes, farms, and businesses across Harare.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/profile.php?id=100063761717785" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/263775710780" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.117 1.533 5.845L.057 23.488a.5.5 0 00.612.612l5.643-1.476A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.578 9.578 0 01-4.885-1.337l-.35-.208-3.613.945.963-3.521-.228-.361A9.563 9.563 0 012.4 12C2.4 6.698 6.698 2.4 12 2.4S21.6 6.698 21.6 12 17.302 21.6 12 21.6z"/></svg>
+          </a>
+          <a href="mailto:gwenziwitness@gmail.com" class="social-btn" aria-label="Email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html">Borehole Drilling</a></li>
+          <li><a href="services.html">Pump Installation</a></li>
+          <li><a href="services.html">Water Testing</a></li>
+          <li><a href="services.html">Borehole Rehabilitation</a></li>
+          <li><a href="services.html">Tank &amp; Reticulation</a></li>
+          <li><a href="services.html">Construction Works</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>8 Williams Way, New Adbennie<br>Harare, Zimbabwe</span>
+        </div>
+        <div class="footer-contact-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.15 6.15l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0121.99 15l-.07 1.92z"/></svg>
+          <span>
+            <a href="tel:+263775710780">+263 775 710 780</a><br>
+            <a href="tel:+263714338997">+263 714 338 997</a>
+          </span>
+        </div>
+        <div class="footer-contact-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span><a href="mailto:gwenziwitness@gmail.com">gwenziwitness@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 G-Tech Engineering. All rights reserved.</p>
+      <div style="display:flex; gap:20px;">
+        <a href="#" onclick="return false;" style="opacity:0.5; cursor:default;" title="Coming soon">Privacy Policy</a>
+        <a href="#" onclick="return false;" style="opacity:0.5; cursor:default;" title="Coming soon">Terms of Service</a>
+        <a href="contact.html">Get a Quote</a>
+        <a href="https://invitt.co.zw" target="_blank" rel="noopener">Designed by Invitt Co</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── WHATSAPP FAB ─── -->
+  <a href="https://wa.me/263775710780" target="_blank" rel="noopener" class="fab-whatsapp" aria-label="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.117 1.533 5.845L.057 23.488a.5.5 0 00.612.612l5.643-1.476A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.6a9.578 9.578 0 01-4.885-1.337l-.35-.208-3.613.945.963-3.521-.228-.361A9.563 9.563 0 012.4 12C2.4 6.698 6.698 2.4 12 2.4S21.6 6.698 21.6 12 17.302 21.6 12 21.6z"/></svg>
+  </a>
+
+  <!-- ─── LIGHTBOX ─── -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project media viewer">
+    <div class="lightbox-inner" id="lightboxInner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <div id="lightboxContent"></div>
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    // ─── NAV SCROLL ───
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ─── HAMBURGER ───
+    const ham = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+
+    ham.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      ham.classList.toggle('open', isOpen);
+      ham.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      ham.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+      mobileMenu.style.display = isOpen ? 'flex' : 'none';
+    });
+
+    mobileCloseBtn.addEventListener('click', closeMobile);
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+      ham.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+      ham.setAttribute('aria-label', 'Open menu');
+      document.body.style.overflow = '';
+      setTimeout(() => { mobileMenu.style.display = 'none'; }, 300);
+    }
+    mobileMenu.style.display = 'none';
+
+    // ─── FILTER ───
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.proj-card');
+    const emptyState = document.getElementById('emptyState');
+    const filterCount = document.getElementById('filterCount');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let visible = 0;
+
+        cards.forEach(card => {
+          if (card.id === 'emptyState') return;
+          const cat = card.dataset.category;
+          const type = card.dataset.type;
+          const match = filter === 'all' || cat === filter || (filter === 'video' && type === 'video');
+
+          card.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+
+        emptyState.classList.toggle('visible', visible === 0);
+        filterCount.textContent = filter === 'all'
+          ? 'Showing all projects'
+          : `${visible} project${visible !== 1 ? 's' : ''} found`;
+      });
+    });
+
+    // ─── LIGHTBOX ───
+    const lightbox = document.getElementById('lightbox');
+    const lightboxContent = document.getElementById('lightboxContent');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+
+    let photoCards = []; // only photo cards for prev/next
+    let currentIndex = 0;
+
+    function openLightbox(card) {
+      const type = card.dataset.type;
+      const caption = card.dataset.caption || '';
+      lightboxCaption.textContent = caption;
+
+      if (type === 'video') {
+        const ytId = card.dataset.ytId;
+        lightboxContent.innerHTML = `
+          <div class="lightbox-iframe-wrap">
+            <iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>`;
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+      } else {
+        const src = card.dataset.src;
+        lightboxContent.innerHTML = `<img class="lightbox-img" src="${src}" alt="${caption}" />`;
+
+        // build photo-only nav array from currently visible cards
+        photoCards = Array.from(cards).filter(c =>
+          c.dataset.type === 'photo' && c.style.display !== 'none'
+        );
+        currentIndex = photoCards.indexOf(card);
+        lightboxPrev.style.display = photoCards.length > 1 ? '' : 'none';
+        lightboxNext.style.display = photoCards.length > 1 ? '' : 'none';
+      }
+
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      // stop youtube autoplay
+      lightboxContent.innerHTML = '';
+    }
+
+    function navLightbox(dir) {
+      currentIndex = (currentIndex + dir + photoCards.length) % photoCards.length;
+      const card = photoCards[currentIndex];
+      lightboxCaption.textContent = card.dataset.caption || '';
+      lightboxContent.innerHTML = `<img class="lightbox-img" src="${card.dataset.src}" alt="${card.dataset.caption || ''}" />`;
+    }
+
+    cards.forEach(card => {
+      if (card.id === 'emptyState') return;
+      card.addEventListener('click', () => openLightbox(card));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(-1); });
+    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); navLightbox(1); });
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // ─── SCROLL REVEALS ───
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
