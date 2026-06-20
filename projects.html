@@ -24,21 +24,21 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg:          #FFFFFF;
-      --bg-soft:     #F6F7F9;
-      --surface:     #FFFFFF;
-      --ink:         #14171C;
-      --ink-soft:    #3A3F47;
-      --text-mid:    #5B6470;
-      --text-dim:    #8B93A0;
-      --border:      rgba(20,23,28,0.09);
-      --border-soft: rgba(20,23,28,0.06);
+      --bg:          #0B0C0E;
+      --bg-soft:     #14161B;
+      --surface:     #1B1E24;
+      --ink:         #F4F5F7;
+      --ink-soft:    #C7CBD2;
+      --text-mid:    #9AA0AA;
+      --text-dim:    #6B7178;
+      --border:      rgba(255,255,255,0.10);
+      --border-soft: rgba(255,255,255,0.06);
       --orange:      #F2541D;
-      --orange-dark: #D8430F;
-      --orange-soft: rgba(242,84,29,0.08);
-      --orange-soft2:rgba(242,84,29,0.14);
-      --shadow-soft: 0 24px 60px rgba(20,23,28,0.08);
-      --shadow-card: 0 10px 32px rgba(20,23,28,0.06);
+      --orange-dark: #FF8A4D;
+      --orange-soft: rgba(242,84,29,0.16);
+      --orange-soft2:rgba(242,84,29,0.22);
+      --shadow-soft: 0 30px 90px rgba(0,0,0,0.6);
+      --shadow-card: 0 14px 40px rgba(0,0,0,0.45);
       --r-lg: 28px;
       --r-md: 18px;
       --r-sm: 10px;
@@ -117,7 +117,7 @@
     /* ─── NAV ─── */
     nav {
       position: sticky; top: 0; z-index: 200; width: 100%;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+      background: rgba(11,12,14,0.88); backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-soft);
       transition: box-shadow 0.3s, border-color 0.3s;
     }
@@ -317,7 +317,7 @@
 
     /* skeleton loader for images */
     .proj-card-media img:not([src]), .proj-card-media img[src=""] {
-      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background: linear-gradient(90deg, #1c1f24 25%, #262a30 50%, #1c1f24 75%);
       background-size: 200% 100%; animation: shimmer 1.5s infinite;
     }
     @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
@@ -351,7 +351,7 @@
       font-family: var(--ff-mono); font-size: 10px; font-weight: 500;
       letter-spacing: 0.1em; text-transform: uppercase;
       padding: 5px 11px; border-radius: 9999px;
-      background: rgba(255,255,255,0.92); color: var(--ink);
+      background: rgba(20,22,26,0.82); color: var(--ink);
       backdrop-filter: blur(8px);
     }
     .proj-type-badge.video { background: var(--orange); color: #fff; }
@@ -443,14 +443,14 @@
     #cta-band { padding: 0 32px 80px; }
     .cta-card {
       max-width: 1320px; margin: 0 auto;
-      background: var(--ink); border-radius: var(--r-lg); padding: 56px 56px;
+      background: linear-gradient(135deg, rgba(242,84,29,0.10), var(--surface) 65%); border-radius: var(--r-lg); padding: 56px 56px;
       display: flex; align-items: center; justify-content: space-between; gap: 40px;
       flex-wrap: wrap;
     }
     .cta-card .eyebrow-tag { background: rgba(242,84,29,0.15); color: #f98a62; }
     .cta-card .eyebrow-tag::before { background: var(--orange); }
-    .cta-card h2 { font-family: var(--ff-display); font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; color: #fff; margin-top: 12px; letter-spacing: -0.02em; }
-    .cta-card p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.65; margin-top: 10px; max-width: 46ch; }
+    .cta-card h2 { font-family: var(--ff-display); font-size: clamp(28px, 3.5vw, 42px); font-weight: 700; color: var(--ink); margin-top: 12px; letter-spacing: -0.02em; }
+    .cta-card p { color: var(--text-mid); font-size: 16px; line-height: 1.65; margin-top: 10px; max-width: 46ch; }
     .cta-text { flex: 1; min-width: 240px; }
     .cta-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
     .btn-whatsapp {
@@ -462,8 +462,6 @@
       transition: filter 0.2s, transform 0.15s;
     }
     .btn-whatsapp:hover { filter: brightness(1.1); transform: translateY(-2px); }
-    .cta-card .btn-outline { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); justify-content: center; }
-    .cta-card .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.06); color: #fff; }
 
     /* ─── FOOTER ─── */
     footer {
