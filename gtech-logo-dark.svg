@@ -1,0 +1,14 @@
+<svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Drill shaft -->
+  <rect x="0" y="32" width="44" height="14" rx="2.5" fill="#F2541D"/>
+  <!-- Fluted sections -->
+  <rect x="44" y="26" width="11" height="26" rx="1.5" fill="#F2541D"/>
+  <rect x="55" y="21" width="9" height="36" rx="1.5" fill="#CC3F10"/>
+  <rect x="64" y="16" width="7" height="46" rx="1.5" fill="#F2541D"/>
+  <!-- Tip -->
+  <polygon points="71,39 88,28 88,50" fill="#CC3F10"/>
+  <polygon points="88,28 98,39 88,50" fill="#F2541D"/>
+  <!-- Wordmark -->
+  <text x="114" y="34" font-family="'Clash Display', Arial Black, sans-serif" font-weight="700" font-size="30" fill="#F4F5F7" letter-spacing="-0.5">G-TECH</text>
+  <text x="115" y="56" font-family="'Satoshi', Arial, sans-serif" font-weight="500" font-size="13" fill="#9AA0AA" letter-spacing="3.5">ENGINEERING</text>
+</svg>

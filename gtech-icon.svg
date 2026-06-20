@@ -1,0 +1,12 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="80" height="80" rx="16" fill="#0B0C0E"/>
+  <!-- Drill shaft -->
+  <rect x="6" y="34" width="20" height="11" rx="2" fill="#F2541D"/>
+  <!-- Fluted sections -->
+  <rect x="26" y="29" width="8" height="21" rx="1.5" fill="#F2541D"/>
+  <rect x="34" y="24" width="6" height="31" rx="1.5" fill="#CC3F10"/>
+  <rect x="40" y="18" width="5" height="43" rx="1.5" fill="#F2541D"/>
+  <!-- Tip -->
+  <polygon points="45,39.5 58,30 58,49" fill="#CC3F10"/>
+  <polygon points="58,30 68,39.5 58,49" fill="#F2541D"/>
+</svg>
