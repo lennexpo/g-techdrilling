@@ -424,11 +424,9 @@
     .hero-ctrl-prev:hover { background: rgba(255,255,255,0.18); transform: scale(1.06); }
 
     .hero-card {
-      position: absolute;
-      left: 28px;
-      right: 28px;
-      bottom: 28px;
+      position: relative;
       z-index: 5;
+      margin: -140px 28px 0;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--r-md);
@@ -652,9 +650,9 @@
       .hamburger { display: flex; }
 
       #hero { padding: 16px 16px 0; }
-      .hero-frame { border-radius: 20px; min-height: 640px; }
-      .hero-card { position: static; margin-top: -60px; left: auto; right: auto; bottom: auto; border-radius: 20px; }
-      .hero-controls { top: 20px; right: 20px; }
+      .hero-frame { border-radius: 20px; min-height: 260px; height: 60vw; max-height: 380px; }
+      .hero-card { margin: -60px 0 0; border-radius: 20px; }
+      .hero-controls { top: 16px; right: 16px; }
 
       .stats-strip { flex-direction: column; gap: 28px; padding: 48px 24px; }
       .stat-block:not(:last-child)::after { display: none; }
@@ -781,15 +779,15 @@
         </button>
       </div>
 
-      <div class="hero-card reveal">
-        <div class="hero-card-left">
-          <span class="eyebrow-tag">Reliable, Fast, and Built to Last</span>
-          <h1 class="hero-title">Deep, Reliable, and Affordable Boreholes.</h1>
-        </div>
-        <div class="hero-card-right">
-          <p>When it comes to securing water for your home or farm, a properly drilled borehole is your first line of defence. We handle site survey, drilling, and pump installation — start to finish.</p>
-          <a href="contact.html" class="btn-orange">Schedule Your Borehole Survey</a>
-        </div>
+    </div>
+    <div class="hero-card reveal">
+      <div class="hero-card-left">
+        <span class="eyebrow-tag">Reliable, Fast, and Built to Last</span>
+        <h1 class="hero-title">Deep, Reliable, and Affordable Boreholes.</h1>
+      </div>
+      <div class="hero-card-right">
+        <p>When it comes to securing water for your home or farm, a properly drilled borehole is your first line of defence. We handle site survey, drilling, and pump installation — start to finish.</p>
+        <a href="contact.html" class="btn-orange">Schedule Your Borehole Survey</a>
       </div>
     </div>
   </section>
