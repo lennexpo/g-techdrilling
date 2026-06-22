@@ -329,14 +329,22 @@
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
     }
     .proj-card:hover .proj-yt-thumb { transform: scale(1.04); }
+    .proj-yt-preview-wrap {
+      position: absolute; inset: 0; overflow: hidden;
+    }
     .proj-yt-preview {
       position: absolute; top: 50%; left: 50%;
-      width: 100%; height: 177.78%; /* 16:9 host sized to cover a portrait/landscape crop */
-      transform: translate(-50%, -50%) scale(1.04);
+      /* iframe's own width/height attrs are set to a true 9:16 ratio so the
+         YouTube player renders with NO internal black bars. We then scale that
+         clean rectangle up so its width covers the card, and center-crop the
+         vertical overflow via the wrapper's overflow:hidden above. */
+      width: auto; height: 220%;
+      transform: translate(-50%, -50%) scale(1.08);
       border: none; pointer-events: none;
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
     }
-    .proj-card:hover .proj-yt-preview { transform: translate(-50%, -50%) scale(1.1); }
+    .proj-card.featured .proj-yt-preview { height: 340%; }
+    .proj-card:hover .proj-yt-preview { transform: translate(-50%, -50%) scale(1.16); }
     .proj-play-btn {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -771,7 +779,9 @@
 
       <div class="proj-card video-card featured reveal" data-category="drilling" data-type="video" data-yt-id="kdT_5pfmMkA" data-caption="Borehole drilling rig on site — Harare">
         <div class="proj-card-media">
-          <iframe class="proj-yt-preview" src="https://www.youtube.com/embed/kdT_5pfmMkA?autoplay=1&mute=1&loop=1&playlist=kdT_5pfmMkA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech drilling rig on site" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+          <div class="proj-yt-preview-wrap">
+            <iframe class="proj-yt-preview" width="270" height="480" src="https://www.youtube.com/embed/kdT_5pfmMkA?autoplay=1&mute=1&loop=1&playlist=kdT_5pfmMkA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech drilling rig on site" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+          </div>
           <div class="proj-play-btn">
             <div class="proj-play-circle">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -794,7 +804,9 @@
 
       <div class="proj-card video-card reveal reveal-delay-1" data-category="drilling" data-type="video" data-yt-id="i-GUA5XSTYs" data-caption="Drilling rig in operation — Harare">
         <div class="proj-card-media">
-          <iframe class="proj-yt-preview" src="https://www.youtube.com/embed/i-GUA5XSTYs?autoplay=1&mute=1&loop=1&playlist=i-GUA5XSTYs&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech drilling rig in operation" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+          <div class="proj-yt-preview-wrap">
+            <iframe class="proj-yt-preview" width="270" height="480" src="https://www.youtube.com/embed/i-GUA5XSTYs?autoplay=1&mute=1&loop=1&playlist=i-GUA5XSTYs&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech drilling rig in operation" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+          </div>
           <div class="proj-play-btn">
             <div class="proj-play-circle">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -815,9 +827,11 @@
         </div>
       </div>
 
-      <div class="proj-card video-card reveal reveal-delay-2" data-category="drilling" data-type="video" data-yt-id="_nfat2HpkZc" data-caption="On-site borehole drilling — Harare">
+      <div class="proj-card video-card reveal reveal-delay-2" data-category="drilling" data-type="video" data-yt-id="jq7D5FJAPMs" data-caption="On-site borehole drilling — Harare">
         <div class="proj-card-media">
-          <iframe class="proj-yt-preview" src="https://www.youtube.com/embed/_nfat2HpkZc?autoplay=1&mute=1&loop=1&playlist=_nfat2HpkZc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech on-site borehole drilling" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+          <div class="proj-yt-preview-wrap">
+            <iframe class="proj-yt-preview" width="270" height="480" src="https://www.youtube.com/embed/jq7D5FJAPMs?autoplay=1&mute=1&loop=1&playlist=jq7D5FJAPMs&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech on-site borehole drilling" loading="lazy" allow="autoplay; encrypted-media"></iframe>
+          </div>
           <div class="proj-play-btn">
             <div class="proj-play-circle">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
