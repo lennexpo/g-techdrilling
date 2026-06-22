@@ -323,12 +323,20 @@
     @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
     /* ─── VIDEO CARD ─── */
-    .proj-card.video-card .proj-card-media { position: relative; }
+    .proj-card.video-card .proj-card-media { position: relative; background: #000; }
     .proj-yt-thumb {
       width: 100%; height: 100%; object-fit: cover;
       transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
     }
     .proj-card:hover .proj-yt-thumb { transform: scale(1.04); }
+    .proj-yt-preview {
+      position: absolute; top: 50%; left: 50%;
+      width: 100%; height: 177.78%; /* 16:9 host sized to cover a portrait/landscape crop */
+      transform: translate(-50%, -50%) scale(1.04);
+      border: none; pointer-events: none;
+      transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .proj-card:hover .proj-yt-preview { transform: translate(-50%, -50%) scale(1.1); }
     .proj-play-btn {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -753,12 +761,17 @@
       </div>
 
       <!-- ── VIDEO CARDS (YouTube) ── -->
-      <!-- To add a video: copy a video card block, replace the YouTube video ID (YOUTUBE_ID_1 etc.)
-           The thumbnail URL format is: https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg -->
+      <!-- To add a video: copy a video card block below, then replace ALL THREE
+           occurrences of the video ID inside that card:
+             1. data-yt-id="..."            (used by the lightbox player)
+             2. iframe src ...embed/...      (used for the autoplaying preview)
+             3. &playlist=...                (must match the embed ID, needed for YouTube's loop param to work)
+           The card preview auto-plays a muted, looping clip of the video itself —
+           no separate thumbnail image is used. -->
 
       <div class="proj-card video-card featured reveal" data-category="drilling" data-type="video" data-yt-id="kdT_5pfmMkA" data-caption="Borehole drilling rig on site — Harare">
         <div class="proj-card-media">
-          <img class="proj-yt-thumb" src="https://img.youtube.com/vi/kdT_5pfmMkA/maxresdefault.jpg" alt="G-Tech drilling rig on site" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/kdT_5pfmMkA/hqdefault.jpg'" />
+          <iframe class="proj-yt-preview" src="https://www.youtube.com/embed/kdT_5pfmMkA?autoplay=1&mute=1&loop=1&playlist=kdT_5pfmMkA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech drilling rig on site" loading="lazy" allow="autoplay; encrypted-media"></iframe>
           <div class="proj-play-btn">
             <div class="proj-play-circle">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -781,7 +794,7 @@
 
       <div class="proj-card video-card reveal reveal-delay-1" data-category="drilling" data-type="video" data-yt-id="i-GUA5XSTYs" data-caption="Drilling rig in operation — Harare">
         <div class="proj-card-media">
-          <img class="proj-yt-thumb" src="https://img.youtube.com/vi/i-GUA5XSTYs/maxresdefault.jpg" alt="G-Tech drilling rig in operation" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/i-GUA5XSTYs/hqdefault.jpg'" />
+          <iframe class="proj-yt-preview" src="https://www.youtube.com/embed/i-GUA5XSTYs?autoplay=1&mute=1&loop=1&playlist=i-GUA5XSTYs&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech drilling rig in operation" loading="lazy" allow="autoplay; encrypted-media"></iframe>
           <div class="proj-play-btn">
             <div class="proj-play-circle">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -804,7 +817,7 @@
 
       <div class="proj-card video-card reveal reveal-delay-2" data-category="drilling" data-type="video" data-yt-id="_nfat2HpkZc" data-caption="On-site borehole drilling — Harare">
         <div class="proj-card-media">
-          <img class="proj-yt-thumb" src="https://img.youtube.com/vi/_nfat2HpkZc/maxresdefault.jpg" alt="G-Tech on-site borehole drilling" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/_nfat2HpkZc/hqdefault.jpg'" />
+          <iframe class="proj-yt-preview" src="https://www.youtube.com/embed/_nfat2HpkZc?autoplay=1&mute=1&loop=1&playlist=_nfat2HpkZc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1" title="G-Tech on-site borehole drilling" loading="lazy" allow="autoplay; encrypted-media"></iframe>
           <div class="proj-play-btn">
             <div class="proj-play-circle">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
