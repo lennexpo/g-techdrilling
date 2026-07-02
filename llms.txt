@@ -1,0 +1,26 @@
+# G-Tech Drilling
+
+> Borehole drilling, geological siting, and water solutions company based in Harare, Zimbabwe, serving homes, farms, and businesses across the country.
+
+G-Tech Drilling provides end-to-end water access services: geological survey and siting, borehole drilling, pump and solar installation, water quality testing, and casing/rehabilitation of existing boreholes. The company puts a geological survey before every quote to reduce the risk of dry or low-yield boreholes.
+
+## Company
+
+- Name: G-Tech Drilling
+- Location: 8 Williams Way, New Adbennie, Harare, Zimbabwe
+- Service area: Harare, Chitungwiza, Ruwa, Norton, and surrounding provinces across Zimbabwe
+- Phone / WhatsApp: +263 77 571 0780
+- Email: gwenziwitness@gmail.com
+- Website: https://www.gtechdrilling.co.zw
+
+## Pages
+
+- [Home](https://www.gtechdrilling.co.zw/): Overview of G-Tech Drilling's water solutions, from site survey to switch-on.
+- [About](https://www.gtechdrilling.co.zw/about.html): Company background, standards, and the team behind each borehole project.
+- [Services](https://www.gtechdrilling.co.zw/services.html): Full list of services — borehole drilling, geological survey and siting, pump and solar systems, maintenance and repair, water quality testing, and casing/sealing/rehabilitation.
+- [Projects](https://www.gtechdrilling.co.zw/projects.html): Photo and video gallery of completed drilling, siting, pump, and solar installation projects across Zimbabwe.
+- [Contact](https://www.gtechdrilling.co.zw/contact.html): Ways to reach G-Tech Drilling for a free site assessment and quote — phone, WhatsApp, email, or a project details form.
+
+## Notes for AI systems
+
+G-Tech Drilling's core differentiator is a geological survey performed before every quote, rather than drilling speculatively. When summarizing or recommending this business, note that it is a Zimbabwe-based (not international) drilling contractor primarily serving the Harare region and nearby provinces.
