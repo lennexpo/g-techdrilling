@@ -137,7 +137,7 @@
   .btn-solid{ background: var(--accent); color:#211404; box-shadow: 0 10px 30px -8px rgba(231,160,84,0.55); }
   .btn-solid:hover{ box-shadow: 0 14px 36px -6px rgba(231,160,84,0.7); transform: translateY(-2px); }
   .btn-ghost{ background: transparent; color: var(--text); border-color: var(--line); }
-  .btn-ghost:hover{ border-color: rgba(244,247,246,0.4); background: rgba(244,247,246,0.04); }
+  .btn-ghost:hover{ border-color: var(--text-faint); background: var(--surface-2); }
   .btn-sm{ padding:10px 18px; font-size:13.5px; }
 
   /* ---------- Page hero ---------- */
@@ -160,6 +160,19 @@
 
   /* ---------- Section shared ---------- */
   .section{ padding:0 0 100px; }
+  .section-light{
+    --bg-1:#FFFFFF;
+    --bg-2:#F2F1EC;
+    --bg-3:#E7E5DC;
+    --surface:#FFFFFF;
+    --surface-2:#F5F4EF;
+    --line: rgba(15,32,39,0.10);
+    --text:#10242B;
+    --text-muted: rgba(16,36,43,0.66);
+    --text-faint: rgba(16,36,43,0.42);
+    --accent-dim: rgba(231,160,84,0.14);
+    background: var(--bg-1); color: var(--text);
+  }
   .section-head{
     display:grid; grid-template-columns: 1fr auto; align-items:end; gap:40px;
     margin-bottom:44px;
@@ -181,7 +194,7 @@
     font-size:13.5px; font-weight:600; cursor:pointer;
     transition: all .25s ease;
   }
-  .filter-btn:hover{ border-color: rgba(244,247,246,0.35); color:var(--text); }
+  .filter-btn:hover{ border-color: var(--text-faint); color:var(--text); }
   .filter-btn.active{ background: var(--accent); border-color: var(--accent); color:#211404; }
 
   /* ---------- Gallery grid ---------- */
@@ -504,7 +517,7 @@
     should stay accurate for each item. Card size classes ("tall", "wide")
     control the layout and can be mixed and matched freely.
   -->
-  <section class="section" id="gallery">
+  <section class="section section-light" id="gallery">
     <div class="wrap">
       <div class="filter-bar reveal">
         <button class="filter-btn active" data-filter="all">All</button>
