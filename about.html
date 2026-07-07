@@ -249,28 +249,6 @@
   }
   .stat-block span{ font-size:13.5px; color:var(--text-faint); }
 
-  /* ---------- Team ---------- */
-  .team-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:20px; }
-  .team-card{
-    border-radius: var(--radius); border:1px solid var(--line); overflow:hidden;
-    background: var(--surface);
-  }
-  .team-photo{
-    aspect-ratio: 4/5;
-    background: linear-gradient(155deg, var(--bg-3), var(--bg-2) 60%, var(--bg-1));
-    display:flex; align-items:center; justify-content:center; color:var(--text-faint); position:relative;
-  }
-  .team-photo .ph-tag{
-    position:absolute; top:14px; left:14px; font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase;
-    background: rgba(15,32,39,0.7); border:1px solid var(--line); padding:5px 10px; border-radius:100px;
-  }
-  .team-info{ padding:18px 20px 22px; }
-  .team-info b{ display:block; font-size:15.5px; margin-bottom:3px; color: var(--text-faint); font-weight:600; }
-  .team-info span{ font-size:12.5px; color:var(--text-faint); }
-  .team-note{
-    margin-top:28px; font-size:13.5px; color:var(--text-faint); text-align:center;
-  }
-
   /* ---------- CTA banner ---------- */
   .cta-banner{
     border-radius: 28px; padding:72px 60px;
@@ -319,7 +297,6 @@
     .v-1,.v-2,.v-3,.v-4{ grid-column: span 1; min-height:210px; }
     .stats-band{ grid-template-columns: repeat(2,1fr); row-gap:32px; }
     .stat-block:nth-child(3){ border-left:none; padding-left:0; }
-    .team-grid{ grid-template-columns: repeat(2,1fr); }
     .cta-banner{ grid-template-columns:1fr; text-align:left; }
     .footer-top{ grid-template-columns: 1fr 1fr; }
   }
@@ -401,7 +378,6 @@
     .section-head{ grid-template-columns:1fr; }
     .values-grid{ grid-template-columns:1fr; }
     .stats-band{ grid-template-columns: 1fr 1fr; padding:36px 24px; }
-    .team-grid{ grid-template-columns:1fr; }
     .footer-top{ grid-template-columns:1fr; gap:32px; }
     .cta-banner{ padding:44px 28px; }
     .story-badge{ position:static; margin-top:16px; display:inline-block; }
@@ -580,51 +556,6 @@
         <div class="stat-block"><b data-count="12">0</b><span>Years in the field</span></div>
         <div class="stat-block"><b data-count="15">0</b><span>Districts covered</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- ================= TEAM ================= -->
-  <section class="section" id="team">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="kicker reveal">The crew</span>
-          <h2 class="reveal">The people behind every borehole</h2>
-        </div>
-        <p class="reveal">Team profiles and photos are being finalised, placeholders shown below.</p>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-photo">
-            <span class="ph-tag">Placeholder</span>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-          </div>
-          <div class="team-info"><b>Team member name</b><span>Role, coming soon</span></div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">
-            <span class="ph-tag">Placeholder</span>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-          </div>
-          <div class="team-info"><b>Team member name</b><span>Role, coming soon</span></div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">
-            <span class="ph-tag">Placeholder</span>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-          </div>
-          <div class="team-info"><b>Team member name</b><span>Role, coming soon</span></div>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-photo">
-            <span class="ph-tag">Placeholder</span>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-          </div>
-          <div class="team-info"><b>Team member name</b><span>Role, coming soon</span></div>
-        </div>
-      </div>
-      <p class="team-note reveal">Send us real names, roles and photos and we will swap these in.</p>
     </div>
   </section>
 
