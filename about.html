@@ -136,7 +136,7 @@
   .btn-solid{ background: var(--accent); color:#211404; box-shadow: 0 10px 30px -8px rgba(231,160,84,0.55); }
   .btn-solid:hover{ box-shadow: 0 14px 36px -6px rgba(231,160,84,0.7); transform: translateY(-2px); }
   .btn-ghost{ background: transparent; color: var(--text); border-color: var(--line); }
-  .btn-ghost:hover{ border-color: rgba(244,247,246,0.4); background: rgba(244,247,246,0.04); }
+  .btn-ghost:hover{ border-color: var(--text-faint); background: var(--surface-2); }
   .btn-sm{ padding:10px 18px; font-size:13.5px; }
 
   /* ---------- Page hero ---------- */
@@ -165,6 +165,32 @@
 
   /* ---------- Section shared ---------- */
   .section{ padding:100px 0; }
+  .section-light{
+    --bg-1:#FFFFFF;
+    --bg-2:#F2F1EC;
+    --bg-3:#E7E5DC;
+    --surface:#FFFFFF;
+    --surface-2:#F5F4EF;
+    --line: rgba(15,32,39,0.10);
+    --text:#10242B;
+    --text-muted: rgba(16,36,43,0.66);
+    --text-faint: rgba(16,36,43,0.42);
+    --accent-dim: rgba(231,160,84,0.14);
+    background: var(--bg-1); color: var(--text);
+  }
+  .section-cream{
+    --bg-1:#D9CFB4;
+    --bg-2:#CFC3A2;
+    --bg-3:#C3B58E;
+    --surface:#E6DEC7;
+    --surface-2:#DED3B8;
+    --line: rgba(16,36,43,0.14);
+    --text:#10242B;
+    --text-muted: rgba(16,36,43,0.7);
+    --text-faint: rgba(16,36,43,0.46);
+    --accent-dim: rgba(231,160,84,0.18);
+    background: var(--bg-1); color: var(--text);
+  }
   .section-head{
     display:grid; grid-template-columns: 1fr auto; align-items:end; gap:40px;
     margin-bottom:56px;
@@ -219,7 +245,7 @@
   }
   .v-card{
     border-radius: var(--radius); border:1px solid var(--line);
-    background: linear-gradient(160deg, rgba(255,255,255,0.035), rgba(255,255,255,0.005));
+    background: var(--surface);
     padding:28px; display:flex; flex-direction:column; justify-content:space-between;
     position:relative; transition: border-color .3s ease, transform .3s ease;
   }
@@ -470,7 +496,7 @@
   </section>
 
   <!-- ================= STORY ================= -->
-  <section class="section story">
+  <section class="section story section-light">
     <div class="wrap">
       <div class="story-visual reveal">
         <div class="visual-card">
@@ -493,7 +519,7 @@
   </section>
 
   <!-- ================= VALUES ================= -->
-  <section class="section" id="values">
+  <section class="section section-cream" id="values">
     <div class="wrap">
       <div class="section-head">
         <div>
